@@ -33,11 +33,14 @@
         <h2>CONTENTS</h2>
         <a href="#overview">01 / 프로젝트 개요</a>
         <a href="#analysis">02 / 요구사항 분석</a>
-        <a href="#design">03 / 테스트 설계</a>
-        <a href="#execution">04 / 테스트 실행</a>
-        <a href="#automation">05 / 자동화 연계</a>
-        <a href="#documents">06 / 산출물</a>
-        <a href="#review">07 / 정리 및 다음 단계</a>
+        <a href="#analysis-list">03 / 분석서 전체</a>
+        <a href="#design">04 / 테스트 설계</a>
+        <a href="#execution">05 / 테스트 실행</a>
+        <a href="#test-cases">06 / TC 전체 보기</a>
+        <a href="#traceability">07 / 요구사항 추적</a>
+        <a href="#automation">08 / 자동화 연계</a>
+        <a href="#documents">09 / 산출물</a>
+        <a href="#review">10 / 정리 및 다음 단계</a>
       </aside>
       <div class="case-content">
         <section class="case-section" id="overview">
@@ -68,6 +71,17 @@
             <article class="case-card"><span class="case-card-id">REQ-005 / 007 · 연관 요구사항</span><h3>5번째 실패에서는 어떤 안내를?</h3><p><strong>모호함</strong> · 5번째 로그인 실패 시 일반 실패 메시지와 계정 잠금 메시지 중 무엇이 표시되는지 불명확했습니다.</p><p><strong>확인 결과</strong> · 5번째 실패 즉시 잠금 처리하고 잠금 메시지를 표시합니다.</p><p class="takeaway">테스트 반영 · TC-033</p></article>
           </div>
           <p class="case-small">※ 위 사례는 요구사항 분석서와 v1.1 변경이력에서 발췌·요약했습니다. 답변자는 실제 회사 기획자가 아닌 실습용 가상 기획자입니다.</p>
+        </section>
+
+
+        <section class="case-section" id="analysis-list">
+          <span class="case-label">03 / REQUIREMENTS REVIEW LOG</span>
+          <h2>요구사항 분석서 전체 보기</h2>
+          <p class="case-lead">분석서의 <strong>추가 확인 12건</strong>을 질문·이유·가상 기획자 답변까지 원문 그대로 확인할 수 있습니다. 항목을 클릭하면 전체 답변을 펼쳐 볼 수 있어요.</p>
+          <div class="explorer-toolbar"><label class="search-field">분석 내용 검색<input id="analysis-search" type="search" placeholder="예: REQ-007, 오류 메시지, 입력 길이" autocomplete="off"></label><label class="search-field compact">요구사항<select id="analysis-req"><option value="">전체 요구사항</option></select></label></div>
+          <div id="analysis-count" class="explorer-count" aria-live="polite"></div>
+          <div id="analysis-results" class="qa-stack"></div>
+          <p class="case-small">※ 분석서는 추가 확인 행만 웹에서 제공합니다. '확인된 조건' 항목을 포함한 원본 시트는 아래 산출물에서 다운로드할 수 있습니다.</p>
         </section>
 
         <section class="case-section" id="design">
@@ -104,6 +118,24 @@
           </div>
         </section>
 
+
+        <section class="case-section" id="test-cases">
+          <span class="case-label">06 / TEST CASE LIBRARY</span>
+          <h2>전체 테스트 케이스 · 43건</h2>
+          <p class="case-lead">TC-001부터 TC-043까지 <strong>원본에 기록된 테스트 목적, 사전 조건, 데이터, 절차, 기대 결과, 실제 결과, 비고</strong>를 열람할 수 있습니다. 검색 및 요구사항별 필터를 제공합니다.</p>
+          <div class="explorer-toolbar"><label class="search-field">테스트 케이스 검색<input id="tc-search" type="search" placeholder="TC-033, 계정 잠금, 서버 요청 등" autocomplete="off"></label><label class="search-field compact">요구사항<select id="tc-req"><option value="">전체 요구사항</option></select></label><label class="search-field compact">결과<select id="tc-result"><option value="">전체 결과</option></select></label></div>
+          <div id="tc-count" class="explorer-count" aria-live="polite"></div>
+          <div id="tc-results" class="qa-stack"></div>
+          <p class="case-small">※ 원본의 사전 조건·테스트 절차·실제 결과에는 줄바꿈이 포함되어 있어 상세 보기에서 그대로 표시합니다. 계정 정보는 모두 가상 실습용입니다.</p>
+        </section>
+        <section class="case-section" id="traceability">
+          <span class="case-label">07 / REQUIREMENTS TRACEABILITY</span>
+          <h2>요구사항–테스트 케이스 추적표</h2>
+          <p class="case-lead">테스트 케이스의 요구사항 ID 열을 기준으로 자동 연결한 추적표입니다. REQ를 선택하면 위 테스트 케이스 목록을 해당 요구사항으로 필터링합니다.</p>
+          <div class="case-table-wrap trace-wrap"><table class="case-table trace-table"><thead><tr><th>요구사항</th><th>기능</th><th>추가 확인</th><th>연결된 TC</th><th>TC 개수</th></tr></thead><tbody id="trace-rows"></tbody></table></div>
+          <div class="case-callout"><strong>추적표 읽는 방법</strong> · 한 TC가 둘 이상의 요구사항과 연결되어 있을 수 있으므로, 각 행의 TC 개수를 더한 값은 전체 43건과 다를 수 있습니다. 연결은 원본 TC의 요구사항 ID 표기를 그대로 따릅니다.</div>
+        </section>
+
         <section class="case-section" id="automation">
           <span class="case-label">05 / TEST AUTOMATION</span>
           <h2>자동화로 확장하는 중</h2>
@@ -114,25 +146,29 @@
         <section class="case-section" id="documents">
           <span class="case-label">06 / PROJECT DOCUMENTS</span>
           <h2>프로젝트 산출물</h2>
-          <p class="case-lead">실습에서 작성한 원본 자료 4종을 바탕으로 이 페이지를 구성했습니다. 현재는 공개용 문서의 개인정보·테스트 계정 정보 등을 점검하는 단계로, 파일 내려받기는 다음 업데이트에 추가할 예정입니다.</p>
+          <p class="case-lead">원본 문서 4종을 그대로 제공합니다. 명세서는 PDF 열람과 DOCX 다운로드를, 분석서와 테스트 케이스는 위의 웹 열람 기능과 XLSX 다운로드를 지원합니다.</p>
+          <div class="case-callout"><strong>열람 안내</strong> · PDF는 새 탭에서 열립니다. XLSX 파일은 다운로드 후 Excel 또는 한셀에서 열어주세요. 문서에 나오는 계정·비밀번호는 실습용 가상 계정 정보이며 실제 계정에 사용해서는 안 됩니다.</div>
           <div class="case-docs">
-            <div class="case-doc"><strong>01 / 로그인 기능 요구사항 명세서 v1.0</strong><span>DOCX · 공개 준비 중</span></div>
-            <div class="case-doc"><strong>02 / 요구사항 분석서</strong><span>XLSX · 공개 준비 중</span></div>
-            <div class="case-doc"><strong>03 / 로그인 기능 요구사항 명세서 v1.1</strong><span>DOCX · 공개 준비 중</span></div>
-            <div class="case-doc"><strong>04 / 로그인 기능 테스트 케이스</strong><span>XLSX · 공개 준비 중</span></div>
+            <div class="case-doc"><div class="case-doc-info"><strong>01 / 로그인 기능 요구사항 명세서 v1.0</strong><span>초기 요구사항 · DOCX / PDF</span></div><div class="case-doc-actions"><a href="documents/01_로그인 기능 요구사항 명세서_v1.0.pdf" target="_blank" rel="noopener">PDF 보기 ↗</a><a href="documents/01_로그인 기능 요구사항 명세서_v1.0.docx" download>원본 다운로드 ↓</a></div></div>
+            <div class="case-doc"><div class="case-doc-info"><strong>02 / 요구사항 분석서</strong><span>모호한 조건과 확인 결과 · XLSX</span></div><div class="case-doc-actions"><a href="documents/02_요구사항 분석서_한태현.xlsx" download>원본 다운로드 ↓</a></div></div>
+            <div class="case-doc"><div class="case-doc-info"><strong>03 / 로그인 기능 요구사항 명세서 v1.1</strong><span>추가 확인사항 반영본 · DOCX / PDF</span></div><div class="case-doc-actions"><a href="documents/03_로그인 기능 요구사항 명세서_v1.1.pdf" target="_blank" rel="noopener">PDF 보기 ↗</a><a href="documents/03_로그인 기능 요구사항 명세서_v1.1.docx" download>원본 다운로드 ↓</a></div></div>
+            <div class="case-doc"><div class="case-doc-info"><strong>04 / 로그인 기능 테스트 케이스</strong><span>TC-001~043 및 수행 결과 · XLSX</span></div><div class="case-doc-actions"><a href="documents/04_로그인 기능 테스트 케이스.xlsx" download>원본 다운로드 ↓</a></div></div>
           </div>
+          <p class="case-small">※ 이 자료는 취업 포트폴리오 공개를 위한 QA 실습 기록이며, 실제 운영 서비스의 보안 정보나 업무 문서가 아닙니다. 웹 페이지의 설명은 원본 문서의 발췌 요약입니다.</p>
         </section>
 
         <section class="case-section" id="review">
           <span class="case-label">07 / TAKEAWAYS</span>
           <h2>이번 단계에서 정리한 점</h2>
           <p class="case-lead">요구사항 문장의 작은 차이도 테스트 기대 결과에 영향을 줄 수 있었습니다. 따라서 테스트 케이스를 작성하기 전에 입력 제한, 오류 메시지 표시 방식, 계정 잠금 시점과 같이 결과를 좌우하는 조건을 먼저 구체화하는 흐름으로 문서를 정리했습니다.</p>
-          <div class="case-callout">추후 업데이트: 대표 테스트 증빙 화면, 요구사항–TC 추적표, 공개용 원본 산출물, 자동화 구현 결과, 직접 작성한 프로젝트 회고.</div>
+          <div class="case-callout">추후 업데이트: 대표 테스트 증빙 화면, 자동화 구현 결과, 직접 작성한 프로젝트 회고.</div>
           <p class="case-small">자료 기준: 로그인 기능 요구사항 명세서 v1.0/v1.1, 요구사항 분석서, 로그인 기능 테스트 케이스(총 43건). 이 페이지는 자료 기반 요약본이며 원본 전체를 대체하지 않습니다.</p>
         </section>
       </div>
     </div>
   </main>
+  <script src="data.js"></script>
+  <script src="explorer.js"></script>
   <footer class="case-bottom"><div class="container"><div><strong>TH QA LAB / PROJECT 001</strong><p>테스트 과정과 근거를 기록하는 QA 포트폴리오</p></div><a href="../../index.html#projects">다른 프로젝트 보기 ↗</a></div></footer>
 </body>
 </html>

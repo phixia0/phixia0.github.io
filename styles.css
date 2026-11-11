@@ -37,3 +37,33 @@
 .case-bottom{background:#101b2b;color:white;padding:55px 0}.case-bottom .container{display:flex;justify-content:space-between;gap:30px;align-items:center}.case-bottom p{color:#aebbc6;line-height:1.9;font-size:13px}.case-bottom a{display:inline-block;padding:15px 20px;background:var(--lime);color:#101b2b;font-size:13px;font-weight:800}
 @media(max-width:900px){.case-layout{grid-template-columns:1fr;gap:30px;padding-top:40px}.case-side{position:static;display:flex;gap:18px;overflow-x:auto;white-space:nowrap;padding:8px 0}.case-side h2{display:none}.case-side a{flex-shrink:0}.case-cards{grid-template-columns:1fr}.case-flow{grid-template-columns:repeat(2,1fr)}.case-metrics{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.case-header{padding:0 20px}.case-hero{padding:65px 0}.case-hero h1{letter-spacing:-2px}.case-hero p{font-size:13px}.case-metric{padding:21px 17px}.case-metric strong{font-size:32px}.case-flow{grid-template-columns:1fr}.case-flow div{min-height:0}.case-doc{align-items:flex-start;flex-direction:column}.case-bottom .container{flex-direction:column;align-items:flex-start}}
+
+/* Project documents — preview and download links */
+.case-doc .case-doc-info{display:flex;flex-direction:column;gap:7px;min-width:0}
+.case-doc .case-doc-info span{white-space:normal}
+.case-doc .case-doc-actions{display:flex;flex-wrap:wrap;align-items:center;gap:9px;flex-shrink:0}
+.case-doc .case-doc-actions a{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;color:#14253a;border:1px solid #b7c6c3;background:#f7faf8;padding:9px 12px;font-size:12px;font-weight:700;transition:background .2s,border-color .2s}
+.case-doc .case-doc-actions a:hover{background:#dff9d0;border-color:#84bd73}
+@media(max-width:700px){.case-doc .case-doc-actions{width:100%}.case-doc .case-doc-actions a{flex:1 1 140px}}
+
+
+/* QA explorer — interactive analysis, test case and traceability */
+.explorer-toolbar{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(0,1fr) minmax(0,1fr);gap:12px;margin:22px 0 12px}
+.search-field{display:flex;flex-direction:column;gap:9px;font-size:11px;font-weight:800;color:#4f6065;letter-spacing:.35px}
+.search-field input,.search-field select{font:inherit;font-size:13px;font-weight:500;letter-spacing:0;color:#182a38;background:#fff;border:1px solid #bdcbc6;border-radius:3px;padding:14px 13px;width:100%;min-width:0;outline-offset:2px}
+#analysis-list .explorer-toolbar{grid-template-columns:minmax(0,2fr) minmax(0,1fr)}
+.explorer-count{font-size:12px;color:#65757c;margin:14px 0 19px}
+.qa-stack{display:grid;gap:12px}.qa-details{background:#fff;border:1px solid #d9e1db;border-radius:3px;overflow:hidden}
+.qa-details[open]{border-color:#9dbb83;box-shadow:0 6px 22px rgba(22,43,36,.045)}
+.qa-details summary{cursor:pointer;list-style:none;padding:21px 22px;display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.qa-details summary::-webkit-details-marker{display:none}.qa-details summary:focus-visible{outline:2px solid #537d35;outline-offset:-3px}
+.qa-details summary:after{content:'+';font-weight:800;font-size:23px;line-height:1;color:#69796c;flex:0 0 auto}.qa-details[open] summary:after{content:'−'}
+.qa-item-title{display:block;color:#17283b;font-size:15px;font-weight:800;line-height:1.65;word-break:keep-all}
+.qa-item-kicker{display:block;color:#668149;font-size:11px;font-weight:800;letter-spacing:.5px;margin-bottom:5px}
+.qa-item-sub{display:block;font-size:12px;color:#73818a;line-height:1.75;margin-top:5px}
+.qa-detail-body{border-top:1px solid #e3e8e3;padding:4px 22px 20px;background:#fbfcfa}
+.qa-field{margin:17px 0}.qa-field-label{display:block;font-size:11px;font-weight:800;color:#557347;margin-bottom:8px}.qa-field-text{font-size:13px;color:#3b4a55;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.9;margin:0}
+.qa-badge{display:inline-block;padding:4px 8px;font-size:10px;background:#e6f2dc;color:#426528;margin-left:8px;border-radius:2px;font-weight:800}
+.qa-none{padding:34px;text-align:center;background:white;border:1px dashed #b7c7ba;color:#65746b;font-size:13px}
+.trace-table{min-width:670px}.trace-table td{font-size:12px}.trace-table th{width:auto}.trace-table thead th{white-space:nowrap}.trace-pick{background:none;color:#426f28;text-decoration:underline;border:0;cursor:pointer;font:inherit;font-weight:800;padding:0}.trace-ids{line-height:1.8;max-width:320px}
+@media(max-width:700px){.explorer-toolbar,#analysis-list .explorer-toolbar{grid-template-columns:1fr}.qa-details summary{padding:17px}.qa-detail-body{padding:4px 17px 15px}}
