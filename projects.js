@@ -9,10 +9,10 @@ window.PORTFOLIO_PROJECTS = [
     title: '로그인 기능 QA',
     english: 'LOGIN FEATURE TESTING',
     artwork: 'LOGIN<br>QA TEST',
-    description: '로그인 요구사항을 분석하고, 동등 분할과 경곗값 분석 등을 활용해 테스트 케이스를 설계하는 개인 실습 프로젝트입니다.',
-    tags: ['요구사항 분석', '테스트 케이스', 'DevTools'],
-    status: '진행 중',
-    link: ''
+    description: '10개 요구사항을 분석하고 12개 추가 확인사항을 정리했습니다. 43개 테스트 케이스 설계와 실행 기록을 상세 페이지에서 확인할 수 있습니다.',
+    tags: ['REQ 10개', '확인사항 12건', 'TC 43개'],
+    status: '기록 공개',
+    link: 'projects/login-qa/index.html'
   },
   {
     number: '02',
@@ -39,4 +39,4 @@ window.PORTFOLIO_PROJECTS = [
 ];
 
 // GitHub 사용자명 등록 후 아래 문자열을 바꿔 주세요. 예: 'my-github-id'
-window.GITHUB_USERNAME = '';
+window.GITHUB_USERNAME = 'phixia0';
