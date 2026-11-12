@@ -1,180 +1,178 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101b2b">
-  <meta name="description" content="로그인 기능 QA 프로젝트 — 요구사항 분석, 테스트 설계 및 실행 기록">
-  <title>로그인 기능 QA | TH QA LAB</title>
-  <link rel="stylesheet" href="../../styles.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#f4f2e9" name="theme-color"/>
+<meta content="로그인 기능 QA 프로젝트 — 요구사항 분석, 테스트 설계 및 실행 기록" name="description"/>
+<title>로그인 기능 QA | TH / QUALITY NOTEBOOK</title>
+<link href="../../styles.css" rel="stylesheet"/>
 </head>
 <body class="case-page">
-  <header class="case-header">
-    <a class="case-brand" href="../../index.html">TH<span>.</span> QA LAB</a>
-    <a class="case-back" href="../../index.html#projects">← 프로젝트 목록</a>
-  </header>
-  <main>
-    <section class="case-hero">
-      <div class="container">
-        <div class="case-eyebrow">CASE STUDY / 001 · MANUAL TESTING</div>
-        <h1>로그인 기능<br>QA 프로젝트<span class="accent">.</span></h1>
-        <p>가상 웹 서비스의 로그인 기능을 대상으로, 최초 요구사항의 모호함을 찾아 구체화하고 테스트 케이스를 설계·실행한 개인 실습 프로젝트입니다. 결과뿐 아니라 판단의 근거와 요구사항 변경 과정을 기록했습니다.</p>
-        <div class="case-chips"><span>REQUIREMENTS ANALYSIS</span><span>TEST CASE DESIGN</span><span>TEST EXECUTION</span><span>CHROME DEVTOOLS</span></div>
-        <div class="case-hero-actions"><a class="case-download-primary" href="#documents">↓ QA 산출물 4종 다운로드</a><a class="case-download-secondary" href="documents/%EB%A1%9C%EA%B7%B8%EC%9D%B8_QA_%EC%82%B0%EC%B6%9C%EB%AC%BC_4%EC%A2%85.zip" download>전체 문서 ZIP 받기 ↗</a></div>
-      </div>
-    </section>
-    <div class="case-metrics" aria-label="프로젝트 요약 수치">
-      <div class="case-metric"><strong>10</strong><span>요구사항 · REQ-001~010</span></div>
-      <div class="case-metric"><strong>12</strong><span>추가 확인사항 · 분석서 기록</span></div>
-      <div class="case-metric"><strong>43</strong><span>테스트 케이스 · TC-001~043</span></div>
-      <div class="case-metric"><strong>43</strong><span>Pass · 제출한 실행 기록 기준</span></div>
-    </div>
-    <div class="container case-layout">
-      <aside class="case-side" aria-label="페이지 목차">
-        <h2>CONTENTS</h2>
-        <a href="#overview">01 / 프로젝트 개요</a>
-        <a href="#analysis">02 / 요구사항 분석</a>
-        <a href="#analysis-list">03 / 분석서 전체</a>
-        <a href="#design">04 / 테스트 설계</a>
-        <a href="#execution">05 / 테스트 실행</a>
-        <a href="#test-cases">06 / TC 전체 보기</a>
-        <a href="#traceability">07 / 요구사항 추적</a>
-        <a href="#automation">08 / 자동화 연계</a>
-        <a href="#documents">09 / 산출물</a>
-        <a href="#review">10 / 정리 및 다음 단계</a>
-      </aside>
-      <div class="case-content">
-        <section class="case-section" id="overview">
-          <span class="case-label">01 / PROJECT OVERVIEW</span>
-          <h2>프로젝트 개요</h2>
-          <p class="case-lead">로그인 기능을 테스트하는 과정에서 요구사항을 어떻게 해석하고, 모호한 조건을 어떤 방식으로 확인하며, 그 결과를 테스트 케이스에 연결할지 연습했습니다.</p>
-          <div class="case-table-wrap"><table class="case-table"><tbody>
-            <tr><th scope="row">프로젝트명</th><td>QA Practice Web / 로그인 기능 QA</td></tr>
-            <tr><th scope="row">프로젝트 유형</th><td>가상 서비스 기반 개인 QA 실습</td></tr>
-            <tr><th scope="row">테스트 대상</th><td>PC 웹 로그인 기능 (로컬 Flask 실습 환경)</td></tr>
-            <tr><th scope="row">테스트 환경</th><td>Windows · Chrome · Chrome DevTools</td></tr>
-            <tr><th scope="row">주요 범위</th><td>입력값 검증, 로그인 성공/실패, 오류 메시지, 계정 잠금, 로그아웃 및 접근 제한</td></tr>
-            <tr><th scope="row">테스트 제외</th><td>회원가입, 비밀번호 찾기, 소셜 로그인, 서버 부하 및 네트워크 장애 테스트 등</td></tr>
-            <tr><th scope="row">산출물</th><td>요구사항 명세서 v1.0 / 분석서 / 명세서 v1.1 / 테스트 케이스</td></tr>
-          </tbody></table></div>
-          <p class="case-overview-download"><a href="#documents">📂 요구사항 명세서·분석서·테스트 케이스 다운로드 바로가기 →</a></p>
-          <div class="case-callout"><strong>프로젝트 성격</strong> · 실제 기업 서비스의 검증 경험이 아닌, 학습용으로 정의한 가상의 요구사항과 테스트 환경을 이용한 개인 실습입니다.</div>
-        </section>
-
-        <section class="case-section" id="analysis">
-          <span class="case-label">02 / REQUIREMENTS ANALYSIS</span>
-          <h2>모호한 요구사항을 구체화하다</h2>
-          <p class="case-lead">초기 요구사항 명세서(v1.0)를 검토하면서 테스트 결과가 달라질 수 있는 조건을 추가로 확인했습니다. 확인사항 12건을 분석서에 기록하고, 답변 내용을 최종 명세서(v1.1)에 반영했습니다.</p>
-          <div class="case-flow"><div><span>STEP 01</span>최초 명세서<br>v1.0 검토</div><div><span>STEP 02</span>모호한 조건<br>질문 도출</div><div><span>STEP 03</span>가상 기획자<br>답변 정리</div><div><span>STEP 04</span>명세서 v1.1<br>변경 반영</div></div>
-          <div class="case-cards">
-            <article class="case-card"><span class="case-card-id">REQ-001 · 입력 길이</span><h3>15자를 넘게 입력하면?</h3><p><strong>모호함</strong> · 아이디 최대 길이는 지정돼 있지만, 초과 문자를 입력 단계에서 차단하는지 불명확했습니다.</p><p><strong>확인 결과</strong> · 15자까지만 입력되며 16번째 문자부터 차단합니다.</p><p class="takeaway">테스트 반영 · TC-003, TC-004</p></article>
-            <article class="case-card"><span class="case-card-id">REQ-002 · 입력 UX</span><h3>비밀번호는 표시할 수 있나?</h3><p><strong>모호함</strong> · 비밀번호 마스킹은 정의돼 있지만, 표시/숨기기 기능의 제공 여부는 빠져 있었습니다.</p><p><strong>확인 결과</strong> · 눈 모양 버튼으로 표시를 전환하며 입력값은 유지합니다.</p><p class="takeaway">테스트 반영 · TC-023, TC-024</p></article>
-            <article class="case-card"><span class="case-card-id">REQ-003 · 오류 메시지</span><h3>오류 메시지는 언제 사라질까?</h3><p><strong>모호함</strong> · 필수 입력 오류 메시지의 제거 시점과 두 입력란의 독립 처리 여부가 없었습니다.</p><p><strong>확인 결과</strong> · 해당 입력란을 수정하면 즉시 제거되고, 다른 입력란의 메시지는 유지됩니다.</p><p class="takeaway">테스트 반영 · TC-025~027</p></article>
-            <article class="case-card"><span class="case-card-id">REQ-005 / 007 · 연관 요구사항</span><h3>5번째 실패에서는 어떤 안내를?</h3><p><strong>모호함</strong> · 5번째 로그인 실패 시 일반 실패 메시지와 계정 잠금 메시지 중 무엇이 표시되는지 불명확했습니다.</p><p><strong>확인 결과</strong> · 5번째 실패 즉시 잠금 처리하고 잠금 메시지를 표시합니다.</p><p class="takeaway">테스트 반영 · TC-033</p></article>
-          </div>
-          <p class="case-small">※ 위 사례는 요구사항 분석서와 v1.1 변경이력에서 발췌·요약했습니다. 답변자는 실제 회사 기획자가 아닌 실습용 가상 기획자입니다.</p>
-        </section>
-
-
-        <section class="case-section" id="analysis-list">
-          <span class="case-label">03 / REQUIREMENTS REVIEW LOG</span>
-          <h2>요구사항 분석서 전체 보기</h2>
-          <p class="case-lead">분석서의 <strong>추가 확인 12건</strong>을 질문·이유·가상 기획자 답변까지 원문 그대로 확인할 수 있습니다. 항목을 클릭하면 전체 답변을 펼쳐 볼 수 있어요.</p>
-          <div class="explorer-toolbar"><label class="search-field">분석 내용 검색<input id="analysis-search" type="search" placeholder="예: REQ-007, 오류 메시지, 입력 길이" autocomplete="off"></label><label class="search-field compact">요구사항<select id="analysis-req"><option value="">전체 요구사항</option></select></label></div>
-          <div id="analysis-count" class="explorer-count" aria-live="polite"></div>
-          <div id="analysis-results" class="qa-stack"></div>
-          <p class="case-small">※ 분석서는 추가 확인 행만 웹에서 제공합니다. '확인된 조건' 항목을 포함한 원본 시트는 아래 산출물에서 다운로드할 수 있습니다.</p>
-        </section>
-
-        <section class="case-section" id="design">
-          <span class="case-label">03 / TEST DESIGN</span>
-          <h2>요구사항에서 테스트 케이스로</h2>
-          <p class="case-lead">입력값의 유효/무효 구간은 동등 분할 관점에서 나누고, 글자 수 제한과 같이 경계가 분명한 조건은 경곗값을 중심으로 검증 항목을 구성했습니다.</p>
-          <h3>대표 사례 · 아이디 길이 검증</h3>
-          <div class="case-table-wrap"><table class="case-table"><thead><tr><th scope="col">TC ID</th><th scope="col">조건</th><th scope="col">기대 결과</th></tr></thead><tbody>
-            <tr><td>TC-001</td><td>4자 (최솟값 미만)</td><td>길이 오류 표시, 서버 요청 차단</td></tr>
-            <tr><td>TC-002</td><td>5자 (최솟값)</td><td>길이 유효, 로그인 요청 전송</td></tr>
-            <tr><td>TC-003</td><td>15자 (최댓값)</td><td>길이 유효, 로그인 요청 전송</td></tr>
-            <tr><td>TC-004</td><td>16자 입력 시도</td><td>최대 15자까지만 입력 허용</td></tr>
-          </tbody></table></div>
-          <div class="case-panel"><div class="panel-label">WHY IT MATTERS</div><h3>입력 차단과 요청 차단은 서로 다른 검증</h3><p>16번째 문자가 입력되지 않는지 확인하는 테스트와, 유효하지 않은 입력값이 서버로 전송되지 않는지 확인하는 테스트를 구분했습니다. 화면의 오류 표시뿐 아니라 개발자 도구의 Network 기록을 통해 서버 요청 여부도 확인 대상으로 삼았습니다.</p></div>
-          <h3>테스트 범위 묶음</h3>
-          <div class="case-table-wrap"><table class="case-table"><tbody>
-            <tr><th scope="row">TC-001~014</th><td>아이디·비밀번호 길이 및 아이디 형식 검증</td></tr>
-            <tr><th scope="row">TC-015~024</th><td>비밀번호 형식, 허용 문자 및 표시/숨기기 기능</td></tr>
-            <tr><th scope="row">TC-025~036</th><td>필수 입력, 로그인 인증/실패, 오류 메시지 우선순위·제거</td></tr>
-            <tr><th scope="row">TC-037~043</th><td>계정 잠금, 로그인 버튼, 로그아웃 및 접근 제한</td></tr>
-          </tbody></table></div>
-        </section>
-
-        <section class="case-section" id="execution">
-          <span class="case-label">04 / TEST EXECUTION</span>
-          <h2>테스트 실행 기록</h2>
-          <p class="case-lead">제출한 테스트 케이스 파일에는 총 43건의 수행 결과가 기록되어 있으며, 모두 Pass로 표시되어 있습니다. 여기서의 수치는 문서에 기재된 결과를 집계한 값입니다.</p>
-          <div class="case-result"><div><strong>43</strong><span>전체 TC</span></div><div><strong>43</strong><span>Pass 기록</span></div><div><strong>0</strong><span>Fail 기록</span></div></div>
-          <div class="case-callout"><strong>해석 시 주의</strong> · 이 수치는 업로드한 TC 문서의 기록을 기준으로 하며, 모든 테스트를 독립적으로 재실행·검증했다는 뜻은 아닙니다. 별도 결함 목록이나 재현 영상은 이번 버전에 포함하지 않았습니다.</div>
-          <h3>주요 검증 관점</h3>
-          <div class="case-cards">
-            <article class="case-card"><span class="case-card-id">INPUT VALIDATION</span><h3>클라이언트 검증</h3><p>미입력 및 형식 오류가 있는 경우 지정된 메시지가 출력되는지, 서버에 불필요한 로그인 요청이 발생하지 않는지 확인했습니다.</p></article>
-            <article class="case-card"><span class="case-card-id">AUTHENTICATION</span><h3>인증 및 잠금</h3><p>인증 성공과 실패, 계정별 실패 횟수, 5번째 실패 직후 잠금, 잠금 시간 만료 후 해제 등을 테스트 케이스로 구성했습니다.</p></article>
-          </div>
-        </section>
-
-
-        <section class="case-section" id="test-cases">
-          <span class="case-label">06 / TEST CASE LIBRARY</span>
-          <h2>전체 테스트 케이스 · 43건</h2>
-          <p class="case-lead">TC-001부터 TC-043까지 <strong>원본에 기록된 테스트 목적, 사전 조건, 데이터, 절차, 기대 결과, 실제 결과, 비고</strong>를 열람할 수 있습니다. 검색 및 요구사항별 필터를 제공합니다.</p>
-          <div class="explorer-toolbar"><label class="search-field">테스트 케이스 검색<input id="tc-search" type="search" placeholder="TC-033, 계정 잠금, 서버 요청 등" autocomplete="off"></label><label class="search-field compact">요구사항<select id="tc-req"><option value="">전체 요구사항</option></select></label><label class="search-field compact">결과<select id="tc-result"><option value="">전체 결과</option></select></label></div>
-          <div id="tc-count" class="explorer-count" aria-live="polite"></div>
-          <div id="tc-results" class="qa-stack"></div>
-          <p class="case-small">※ 원본의 사전 조건·테스트 절차·실제 결과에는 줄바꿈이 포함되어 있어 상세 보기에서 그대로 표시합니다. 계정 정보는 모두 가상 실습용입니다.</p>
-        </section>
-        <section class="case-section" id="traceability">
-          <span class="case-label">07 / REQUIREMENTS TRACEABILITY</span>
-          <h2>요구사항–테스트 케이스 추적표</h2>
-          <p class="case-lead">테스트 케이스의 요구사항 ID 열을 기준으로 자동 연결한 추적표입니다. REQ를 선택하면 위 테스트 케이스 목록을 해당 요구사항으로 필터링합니다.</p>
-          <div class="case-table-wrap trace-wrap"><table class="case-table trace-table"><thead><tr><th>요구사항</th><th>기능</th><th>추가 확인</th><th>연결된 TC</th><th>TC 개수</th></tr></thead><tbody id="trace-rows"></tbody></table></div>
-          <div class="case-callout"><strong>추적표 읽는 방법</strong> · 한 TC가 둘 이상의 요구사항과 연결되어 있을 수 있으므로, 각 행의 TC 개수를 더한 값은 전체 43건과 다를 수 있습니다. 연결은 원본 TC의 요구사항 ID 표기를 그대로 따릅니다.</div>
-        </section>
-
-        <section class="case-section" id="automation">
-          <span class="case-label">08 / AUTOMATION HANDOFF</span>
-          <h2>수동 테스트에서 자동화로</h2>
-          <p class="case-lead">43개 TC는 모두 수동으로 검증했습니다. 이 중 <strong>반복 실행과 결과 판정에 적합한 34개 TC</strong>를 Python·Selenium으로 자동화했고, <strong>9개 TC는 수동 검증으로 유지</strong>했습니다. 자동화하지 않았다는 이유로 테스트 범위에서 제외한 것은 아닙니다.</p>
-          <div class="case-result"><div><strong>43</strong><span>수동 실행 · PASS</span></div><div><strong>34</strong><span>자동 실행 · PASS 기록</span></div><div><strong>9</strong><span>수동으로 유지</span></div></div>
-          <div class="case-cards"><article class="case-card"><span class="case-card-id">AUTOMATED / 34 TC</span><h3>입력값 검증 + 인증</h3><p>TC-001~022, TC-025~036. CSV 데이터를 불러와 화면 메시지, 요청 발생, 실패 횟수 초기화 등 조건을 확인합니다.</p></article><article class="case-card"><span class="case-card-id">MANUAL ONLY / 9 TC</span><h3>필요에 따른 선택</h3><p>TC-023~024, TC-037~043. 표시/숨기기, 잠금 시간과 상태 변화, 로그인 버튼·로그아웃 등의 동작은 현재 수동 검증을 유지했습니다.</p></article></div>
-          <p class="case-small">※ 34건의 자동화 PASS는 제출한 실행 화면에 표시된 값입니다. 자동화 커버리지 34/43은 TC 개수 기준으로, 코드 커버리지와 다릅니다.</p>
-          <p class="case-overview-download"><a href="../login-automation/index.html">Python + Selenium 자동화 상세 페이지 보기 →</a></p>
-        </section>
-
-        <section class="case-section" id="documents">
-          <span class="case-label">06 / PROJECT DOCUMENTS</span>
-          <h2>프로젝트 산출물</h2>
-          <p class="case-lead">원본 문서 4종을 그대로 제공합니다. 명세서는 PDF 열람과 DOCX 다운로드를, 분석서와 테스트 케이스는 위의 웹 열람 기능과 XLSX 다운로드를 지원합니다.</p>
-          <div class="case-callout"><strong>열람 안내</strong> · PDF는 새 탭에서 열립니다. XLSX 파일은 다운로드 후 Excel 또는 한셀에서 열어주세요. 문서에 나오는 계정·비밀번호는 실습용 가상 계정 정보이며 실제 계정에 사용해서는 안 됩니다.</div>
-          <p class="case-docs-bundle"><a href="documents/%EB%A1%9C%EA%B7%B8%EC%9D%B8_QA_%EC%82%B0%EC%B6%9C%EB%AC%BC_4%EC%A2%85.zip" download>↓ 산출물 4종 원본 한 번에 다운로드 (.zip)</a></p>
-          <div class="case-docs">
-            <div class="case-doc"><div class="case-doc-info"><strong>01 / 로그인 기능 요구사항 명세서 v1.0</strong><span>초기 요구사항 · DOCX / PDF</span></div><div class="case-doc-actions"><a href="documents/01_%EB%A1%9C%EA%B7%B8%EC%9D%B8%20%EA%B8%B0%EB%8A%A5%20%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%20%EB%AA%85%EC%84%B8%EC%84%9C_v1.0.pdf" target="_blank" rel="noopener">PDF 보기 ↗</a><a href="documents/01_%EB%A1%9C%EA%B7%B8%EC%9D%B8%20%EA%B8%B0%EB%8A%A5%20%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%20%EB%AA%85%EC%84%B8%EC%84%9C_v1.0.docx" download>DOCX 다운로드 ↓</a></div></div>
-            <div class="case-doc"><div class="case-doc-info"><strong>02 / 요구사항 분석서</strong><span>모호한 조건과 확인 결과 · XLSX</span></div><div class="case-doc-actions"><a href="documents/02_%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%20%EB%B6%84%EC%84%9D%EC%84%9C_%ED%95%9C%ED%83%9C%ED%98%84.xlsx" download>XLSX 다운로드 ↓</a></div></div>
-            <div class="case-doc"><div class="case-doc-info"><strong>03 / 로그인 기능 요구사항 명세서 v1.1</strong><span>추가 확인사항 반영본 · DOCX / PDF</span></div><div class="case-doc-actions"><a href="documents/03_%EB%A1%9C%EA%B7%B8%EC%9D%B8%20%EA%B8%B0%EB%8A%A5%20%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%20%EB%AA%85%EC%84%B8%EC%84%9C_v1.1.pdf" target="_blank" rel="noopener">PDF 보기 ↗</a><a href="documents/03_%EB%A1%9C%EA%B7%B8%EC%9D%B8%20%EA%B8%B0%EB%8A%A5%20%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%20%EB%AA%85%EC%84%B8%EC%84%9C_v1.1.docx" download>DOCX 다운로드 ↓</a></div></div>
-            <div class="case-doc"><div class="case-doc-info"><strong>04 / 로그인 기능 테스트 케이스</strong><span>TC-001~043 및 수행 결과 · XLSX</span></div><div class="case-doc-actions"><a href="documents/04_%EB%A1%9C%EA%B7%B8%EC%9D%B8%20%EA%B8%B0%EB%8A%A5%20%ED%85%8C%EC%8A%A4%ED%8A%B8%20%EC%BC%80%EC%9D%B4%EC%8A%A4.xlsx" download>XLSX 다운로드 ↓</a></div></div>
-          </div>
-          <p class="case-small">※ 이 자료는 취업 포트폴리오 공개를 위한 QA 실습 기록이며, 실제 운영 서비스의 보안 정보나 업무 문서가 아닙니다. 웹 페이지의 설명은 원본 문서의 발췌 요약입니다.</p>
-        </section>
-
-        <section class="case-section" id="review">
-          <span class="case-label">07 / TAKEAWAYS</span>
-          <h2>이번 단계에서 정리한 점</h2>
-          <p class="case-lead">요구사항 문장의 작은 차이도 테스트 기대 결과에 영향을 줄 수 있었습니다. 따라서 테스트 케이스를 작성하기 전에 입력 제한, 오류 메시지 표시 방식, 계정 잠금 시점과 같이 결과를 좌우하는 조건을 먼저 구체화하는 흐름으로 문서를 정리했습니다.</p>
-          <div class="case-callout">자동화 구현 및 실행 기록은 <a href="../login-automation/index.html">별도의 자동화 상세 페이지</a>에 연결했습니다. 개인 회고는 추후 추가할 수 있습니다.</div>
-          <p class="case-small">자료 기준: 로그인 기능 요구사항 명세서 v1.0/v1.1, 요구사항 분석서, 로그인 기능 테스트 케이스(총 43건). 이 페이지는 자료 기반 요약본이며 원본 전체를 대체하지 않습니다.</p>
-        </section>
-      </div>
-    </div>
-  </main>
-  <script src="data.js"></script>
-  <script src="explorer.js"></script>
-  <footer class="case-bottom"><div class="container"><div><strong>TH QA LAB / PROJECT 001</strong><p>테스트 과정과 근거를 기록하는 QA 포트폴리오</p></div><a href="../../index.html#projects">다른 프로젝트 보기 ↗</a></div></footer>
+<header class="case-header">
+<a class="case-brand" href="../../index.html">TH<span>/</span> QUALITY NOTEBOOK</a>
+<a class="case-back" href="../../index.html#projects">← 프로젝트 목록</a>
+</header>
+<main>
+<section class="case-hero">
+<div class="container">
+<div class="case-eyebrow">CASE STUDY / 001 · MANUAL TESTING</div>
+<h1>로그인 기능<br/>QA 프로젝트<span class="accent">.</span></h1>
+<p>가상 웹 서비스의 로그인 기능을 대상으로, 최초 요구사항의 모호함을 찾아 구체화하고 테스트 케이스를 설계·실행한 개인 실습 프로젝트입니다. 결과뿐 아니라 판단의 근거와 요구사항 변경 과정을 기록했습니다.</p>
+<div class="case-chips"><span>REQUIREMENTS ANALYSIS</span><span>TEST CASE DESIGN</span><span>TEST EXECUTION</span><span>CHROME DEVTOOLS</span></div>
+<div class="case-hero-actions"><a class="case-download-primary" href="#documents">↓ QA 산출물 4종 다운로드</a><a class="case-download-secondary" download="" href="documents/%EB%A1%9C%EA%B7%B8%EC%9D%B8_QA_%EC%82%B0%EC%B6%9C%EB%AC%BC_4%EC%A2%85.zip">전체 문서 ZIP 받기 ↗</a></div>
+</div>
+</section>
+<div aria-label="프로젝트 요약 수치" class="case-metrics">
+<div class="case-metric"><strong>10</strong><span>요구사항 · REQ-001~010</span></div>
+<div class="case-metric"><strong>12</strong><span>추가 확인사항 · 분석서 기록</span></div>
+<div class="case-metric"><strong>43</strong><span>테스트 케이스 · TC-001~043</span></div>
+<div class="case-metric"><strong>43</strong><span>Pass · 제출한 실행 기록 기준</span></div>
+</div>
+<div class="container case-layout">
+<aside aria-label="페이지 목차" class="case-side">
+<h2>CONTENTS</h2>
+<a href="#overview">01 / 프로젝트 개요</a>
+<a href="#analysis">02 / 요구사항 분석</a>
+<a href="#analysis-list">03 / 분석서 전체</a>
+<a href="#design">04 / 테스트 설계</a>
+<a href="#execution">05 / 테스트 실행</a>
+<a href="#test-cases">06 / TC 전체 보기</a>
+<a href="#traceability">07 / 요구사항 추적</a>
+<a href="#defect-simulation">08 / 결함 보고 실습</a><a href="#automation">09 / 자동화 연계</a>
+<a href="#documents">10 / 산출물</a>
+<a href="#review">11 / 정리 및 다음 단계</a>
+</aside>
+<div class="case-content">
+<section class="case-section" id="overview">
+<span class="case-label">01 / PROJECT OVERVIEW</span>
+<h2>프로젝트 개요</h2>
+<p class="case-lead">로그인 기능을 테스트하는 과정에서 요구사항을 어떻게 해석하고, 모호한 조건을 어떤 방식으로 확인하며, 그 결과를 테스트 케이스에 연결할지 연습했습니다.</p>
+<div class="case-table-wrap"><table class="case-table"><tbody>
+<tr><th scope="row">프로젝트명</th><td>QA Practice Web / 로그인 기능 QA</td></tr>
+<tr><th scope="row">프로젝트 유형</th><td>가상 서비스 기반 개인 QA 실습</td></tr>
+<tr><th scope="row">테스트 대상</th><td>PC 웹 로그인 기능 (로컬 Flask 실습 환경)</td></tr>
+<tr><th scope="row">테스트 환경</th><td>Windows · Chrome · Chrome DevTools</td></tr>
+<tr><th scope="row">주요 범위</th><td>입력값 검증, 로그인 성공/실패, 오류 메시지, 계정 잠금, 로그아웃 및 접근 제한</td></tr>
+<tr><th scope="row">테스트 제외</th><td>회원가입, 비밀번호 찾기, 소셜 로그인, 서버 부하 및 네트워크 장애 테스트 등</td></tr>
+<tr><th scope="row">산출물</th><td>요구사항 명세서 v1.0 / 분석서 / 명세서 v1.1 / 테스트 케이스</td></tr>
+</tbody></table></div>
+<p class="case-overview-download"><a href="#documents">📂 요구사항 명세서·분석서·테스트 케이스 다운로드 바로가기 →</a></p>
+<div class="case-callout"><strong>프로젝트 성격</strong> · 실제 기업 서비스의 검증 경험이 아닌, 학습용으로 정의한 가상의 요구사항과 테스트 환경을 이용한 개인 실습입니다.</div>
+</section>
+<section class="case-section" id="analysis">
+<span class="case-label">02 / REQUIREMENTS ANALYSIS</span>
+<h2>모호한 요구사항을 구체화하다</h2>
+<p class="case-lead">초기 요구사항 명세서(v1.0)를 검토하면서 테스트 결과가 달라질 수 있는 조건을 추가로 확인했습니다. 확인사항 12건을 분석서에 기록하고, 답변 내용을 최종 명세서(v1.1)에 반영했습니다.</p>
+<div class="case-flow"><div><span>STEP 01</span>최초 명세서<br/>v1.0 검토</div><div><span>STEP 02</span>모호한 조건<br/>질문 도출</div><div><span>STEP 03</span>가상 기획자<br/>답변 정리</div><div><span>STEP 04</span>명세서 v1.1<br/>변경 반영</div></div>
+<div class="case-cards">
+<article class="case-card"><span class="case-card-id">REQ-001 · 입력 길이</span><h3>15자를 넘게 입력하면?</h3><p><strong>모호함</strong> · 아이디 최대 길이는 지정돼 있지만, 초과 문자를 입력 단계에서 차단하는지 불명확했습니다.</p><p><strong>확인 결과</strong> · 15자까지만 입력되며 16번째 문자부터 차단합니다.</p><p class="takeaway">테스트 반영 · TC-003, TC-004</p></article>
+<article class="case-card"><span class="case-card-id">REQ-002 · 입력 UX</span><h3>비밀번호는 표시할 수 있나?</h3><p><strong>모호함</strong> · 비밀번호 마스킹은 정의돼 있지만, 표시/숨기기 기능의 제공 여부는 빠져 있었습니다.</p><p><strong>확인 결과</strong> · 눈 모양 버튼으로 표시를 전환하며 입력값은 유지합니다.</p><p class="takeaway">테스트 반영 · TC-023, TC-024</p></article>
+<article class="case-card"><span class="case-card-id">REQ-003 · 오류 메시지</span><h3>오류 메시지는 언제 사라질까?</h3><p><strong>모호함</strong> · 필수 입력 오류 메시지의 제거 시점과 두 입력란의 독립 처리 여부가 없었습니다.</p><p><strong>확인 결과</strong> · 해당 입력란을 수정하면 즉시 제거되고, 다른 입력란의 메시지는 유지됩니다.</p><p class="takeaway">테스트 반영 · TC-025~027</p></article>
+<article class="case-card"><span class="case-card-id">REQ-005 / 007 · 연관 요구사항</span><h3>5번째 실패에서는 어떤 안내를?</h3><p><strong>모호함</strong> · 5번째 로그인 실패 시 일반 실패 메시지와 계정 잠금 메시지 중 무엇이 표시되는지 불명확했습니다.</p><p><strong>확인 결과</strong> · 5번째 실패 즉시 잠금 처리하고 잠금 메시지를 표시합니다.</p><p class="takeaway">테스트 반영 · TC-033</p></article>
+</div>
+<p class="case-small">※ 위 사례는 요구사항 분석서와 v1.1 변경이력에서 발췌·요약했습니다. 답변자는 실제 회사 기획자가 아닌 실습용 가상 기획자입니다.</p>
+</section>
+<section class="case-section" id="analysis-list">
+<span class="case-label">03 / REQUIREMENTS REVIEW LOG</span>
+<h2>요구사항 분석서 전체 보기</h2>
+<p class="case-lead">분석서의 <strong>추가 확인 12건</strong>을 질문·이유·가상 기획자 답변까지 원문 그대로 확인할 수 있습니다. 항목을 클릭하면 전체 답변을 펼쳐 볼 수 있어요.</p>
+<div class="explorer-toolbar"><label class="search-field">분석 내용 검색<input autocomplete="off" id="analysis-search" placeholder="예: REQ-007, 오류 메시지, 입력 길이" type="search"/></label><label class="search-field compact">요구사항<select id="analysis-req"><option value="">전체 요구사항</option></select></label></div>
+<div aria-live="polite" class="explorer-count" id="analysis-count"></div>
+<div class="qa-stack" id="analysis-results"></div>
+<p class="case-small">※ 분석서는 추가 확인 행만 웹에서 제공합니다. '확인된 조건' 항목을 포함한 원본 시트는 아래 산출물에서 다운로드할 수 있습니다.</p>
+</section>
+<section class="case-section" id="design">
+<span class="case-label">03 / TEST DESIGN</span>
+<h2>요구사항에서 테스트 케이스로</h2>
+<p class="case-lead">입력값의 유효/무효 구간은 동등 분할 관점에서 나누고, 글자 수 제한과 같이 경계가 분명한 조건은 경곗값을 중심으로 검증 항목을 구성했습니다.</p>
+<h3>대표 사례 · 아이디 길이 검증</h3>
+<div class="case-table-wrap"><table class="case-table"><thead><tr><th scope="col">TC ID</th><th scope="col">조건</th><th scope="col">기대 결과</th></tr></thead><tbody>
+<tr><td>TC-001</td><td>4자 (최솟값 미만)</td><td>길이 오류 표시, 서버 요청 차단</td></tr>
+<tr><td>TC-002</td><td>5자 (최솟값)</td><td>길이 유효, 로그인 요청 전송</td></tr>
+<tr><td>TC-003</td><td>15자 (최댓값)</td><td>길이 유효, 로그인 요청 전송</td></tr>
+<tr><td>TC-004</td><td>16자 입력 시도</td><td>최대 15자까지만 입력 허용</td></tr>
+</tbody></table></div>
+<div class="case-panel"><div class="panel-label">WHY IT MATTERS</div><h3>입력 차단과 요청 차단은 서로 다른 검증</h3><p>16번째 문자가 입력되지 않는지 확인하는 테스트와, 유효하지 않은 입력값이 서버로 전송되지 않는지 확인하는 테스트를 구분했습니다. 화면의 오류 표시뿐 아니라 개발자 도구의 Network 기록을 통해 서버 요청 여부도 확인 대상으로 삼았습니다.</p></div>
+<h3>테스트 범위 묶음</h3>
+<div class="case-table-wrap"><table class="case-table"><tbody>
+<tr><th scope="row">TC-001~014</th><td>아이디·비밀번호 길이 및 아이디 형식 검증</td></tr>
+<tr><th scope="row">TC-015~024</th><td>비밀번호 형식, 허용 문자 및 표시/숨기기 기능</td></tr>
+<tr><th scope="row">TC-025~036</th><td>필수 입력, 로그인 인증/실패, 오류 메시지 우선순위·제거</td></tr>
+<tr><th scope="row">TC-037~043</th><td>계정 잠금, 로그인 버튼, 로그아웃 및 접근 제한</td></tr>
+</tbody></table></div>
+</section>
+<section class="case-section" id="execution">
+<span class="case-label">04 / TEST EXECUTION</span>
+<h2>테스트 실행 기록</h2>
+<p class="case-lead">제출한 테스트 케이스 파일에는 총 43건의 수행 결과가 기록되어 있으며, 모두 Pass로 표시되어 있습니다. 여기서의 수치는 문서에 기재된 결과를 집계한 값입니다.</p>
+<div class="case-result"><div><strong>43</strong><span>전체 TC</span></div><div><strong>43</strong><span>Pass 기록</span></div><div><strong>0</strong><span>Fail 기록</span></div></div>
+<div class="case-callout"><strong>해석 시 주의</strong> · 이 수치는 업로드한 TC 문서의 기록을 기준으로 하며, 모든 테스트를 독립적으로 재실행·검증했다는 뜻은 아닙니다. 실제 발견 결함은 0건이며, 아래에는 실제 결함으로 오인되지 않도록 구분한 가상 결함 보고 실습 2건을 제공합니다.</div>
+<h3>주요 검증 관점</h3>
+<div class="case-cards">
+<article class="case-card"><span class="case-card-id">INPUT VALIDATION</span><h3>클라이언트 검증</h3><p>미입력 및 형식 오류가 있는 경우 지정된 메시지가 출력되는지, 서버에 불필요한 로그인 요청이 발생하지 않는지 확인했습니다.</p></article>
+<article class="case-card"><span class="case-card-id">AUTHENTICATION</span><h3>인증 및 잠금</h3><p>인증 성공과 실패, 계정별 실패 횟수, 5번째 실패 직후 잠금, 잠금 시간 만료 후 해제 등을 테스트 케이스로 구성했습니다.</p></article>
+</div>
+</section>
+<section class="case-section" id="test-cases">
+<span class="case-label">06 / TEST CASE LIBRARY</span>
+<h2>전체 테스트 케이스 · 43건</h2>
+<p class="case-lead">TC-001부터 TC-043까지 <strong>원본에 기록된 테스트 목적, 사전 조건, 데이터, 절차, 기대 결과, 실제 결과, 비고</strong>를 열람할 수 있습니다. 검색 및 요구사항별 필터를 제공합니다.</p>
+<div class="explorer-toolbar"><label class="search-field">테스트 케이스 검색<input autocomplete="off" id="tc-search" placeholder="TC-033, 계정 잠금, 서버 요청 등" type="search"/></label><label class="search-field compact">요구사항<select id="tc-req"><option value="">전체 요구사항</option></select></label><label class="search-field compact">결과<select id="tc-result"><option value="">전체 결과</option></select></label></div>
+<div aria-live="polite" class="explorer-count" id="tc-count"></div>
+<div class="qa-stack" id="tc-results"></div>
+<p class="case-small">※ 원본의 사전 조건·테스트 절차·실제 결과에는 줄바꿈이 포함되어 있어 상세 보기에서 그대로 표시합니다. 계정 정보는 모두 가상 실습용입니다.</p>
+</section>
+<section class="case-section" id="traceability">
+<span class="case-label">07 / REQUIREMENTS TRACEABILITY</span>
+<h2>요구사항–테스트 케이스 추적표</h2>
+<p class="case-lead">테스트 케이스의 요구사항 ID 열을 기준으로 자동 연결한 추적표입니다. REQ를 선택하면 위 테스트 케이스 목록을 해당 요구사항으로 필터링합니다.</p>
+<div class="case-table-wrap trace-wrap"><table class="case-table trace-table"><thead><tr><th>요구사항</th><th>기능</th><th>추가 확인</th><th>연결된 TC</th><th>TC 개수</th></tr></thead><tbody id="trace-rows"></tbody></table></div>
+<div class="case-callout"><strong>추적표 읽는 방법</strong> · 한 TC가 둘 이상의 요구사항과 연결되어 있을 수 있으므로, 각 행의 TC 개수를 더한 값은 전체 43건과 다를 수 있습니다. 연결은 원본 TC의 요구사항 ID 표기를 그대로 따릅니다.</div>
+</section>
+<section class="case-section" id="defect-simulation"><span class="case-label">08 / ISSUE TRACKING · JIRA PRACTICE</span><h2>PASS 이후에도, 결함 대응을 연습했습니다.</h2><p class="case-lead">실제 수행 결과는 <strong>수동 43/43 PASS · 자동화 34/34 PASS</strong>였습니다. 실제로 발견하지 않은 문제를 발견했다고 주장하지 않고, 보안 영향이 큰 2개 TC를 골라 <strong>가상 결함 등록 → 가상 수정 검토 → QA 재검증 계획</strong>을 Jira에서 연습했습니다.</p>
+<div class="sim-notice"><strong>SIMULATION / 실제 결함 0건</strong><p>두 결함은 모두 의도적으로 가정한 시나리오입니다. Jira의 가상 수정 완료 기록은 실제 소스코드 수정 내역이 아니며, 재검증과 회귀 테스트는 <b>Not Run</b>입니다. 현재 상태는 <b>Ready for Retest</b>입니다.</p></div>
+<div class="sim-flow"><div><span>01</span><b>중요 TC 선정</b><small>TC-032 / TC-043</small></div><div><span>02</span><b>가상 결함 정의</b><small>보안 영향 판단</small></div><div><span>03</span><b>Jira 등록</b><small>QAD-1 / QAD-2</small></div><div><span>04</span><b>검토·수정 가정</b><small>댓글 이력 기록</small></div><div><span>05</span><b>재검증 대기</b><small>Not Run</small></div></div>
+<div class="jira-proof"><a href="defect-reports/media/jira-board.png" rel="noopener" target="_blank"><img alt="Jira 결함 관리 보드에서 QAD-1과 QAD-2가 재검증 대기 상태에 놓인 화면" loading="lazy" src="defect-reports/media/jira-board.png"/></a><div><span class="sim-kicker">JIRA / KANBAN EVIDENCE</span><h3>두 건 모두 재검증 대기</h3><p>할 일 → 진행 중 → 재검증 대기로 상태를 이동하며 역할별 댓글과 검증 계획을 기록했습니다. 사진을 클릭하면 크게 볼 수 있습니다.</p><div class="jira-numbers"><b>02 <small>SIMULATED</small></b><b>00 <small>ACTUAL BUG</small></b></div></div></div>
+<article class="sim-report" id="sim-bug-001"><div class="sim-report-head"><div><span class="sim-kicker">QAD-1 / SIM-BUG-001 · TC-032</span><h3>잠금 상태에서 정상 로그인이 허용되는 현상</h3><p>REQ-007 · 연관 REQ-005</p></div><span class="sim-pill">SIMULATED</span></div><div class="sim-meta"><span><b>Severity</b>Critical</span><span><b>Priority</b>Highest</span><span><b>Status</b>Ready for Retest</span><span><b>Retest</b>Not Run</span></div><div class="sim-two"><div class="sim-box expected"><span>EXPECTED</span><p>비밀번호 5회 실패 시 10분간 잠기며 올바른 인증 정보로도 로그인할 수 없다.</p></div><div class="sim-box assumed"><span>SIMULATED ACTUAL</span><p>잠금 상태임에도 정상 비밀번호로 인증 성공하고 /main으로 이동한다고 가정했다.</p></div></div><details class="sim-details"><summary>재현 절차와 재검증 계획 읽기 ＋</summary><div class="sim-details-body"><h4>재현 절차 (가정)</h4><ol><li>정상 계정으로 잘못된 비밀번호를 5회 연속 제출한다.</li><li>계정 잠금 메시지 및 테스트 상태 도구의 잠금 상태를 확인한다.</li><li>10분 이내에 올바른 비밀번호로 로그인 요청한다.</li><li>로그인 차단 및 /main 이동 여부를 확인한다.</li></ol><h4>영향</h4><p>계정 잠금 정책이 우회되어 비정상적 시도를 제한하는 보안 요구사항을 충족하지 못함.</p><h4>QA 재검증 / 회귀 계획</h4><p>TC-032 직접 재검증, TC-028·029·033과 TC-037~041의 계정 잠금 관련 회귀 테스트 계획. 실행 여부는 Not Run.</p></div></details><div class="jira-evidence"><a href="defect-reports/media/qad1-detail.png" rel="noopener" target="_blank"><img alt="QAD-1 Jira 상세 내용 및 우선순위 Highest" loading="lazy" src="defect-reports/media/qad1-detail.png"/></a><a href="defect-reports/media/qad1-history.png" rel="noopener" target="_blank"><img alt="QAD-1 Jira 가상 수정 및 QA 재검증 계획 댓글" loading="lazy" src="defect-reports/media/qad1-history.png"/></a></div><div class="defect-actions"><a href="defect-reports/QAD-1_simulated_report.pdf" rel="noopener" target="_blank">PDF 미리보기 ↗</a><a download="" href="defect-reports/QAD-1_simulated_report.docx">Word 원본 ↓</a></div></article>
+<article class="sim-report" id="sim-bug-002"><div class="sim-report-head"><div><span class="sim-kicker">QAD-2 / SIM-BUG-002 · TC-043 관련</span><h3>로그아웃 후 이전 세션으로 접근 가능한 현상</h3><p>REQ-010 · 연관 REQ-009</p></div><span class="sim-pill">SIMULATED</span></div><div class="sim-meta"><span><b>Severity</b>Critical</span><span><b>Priority</b>Highest</span><span><b>Status</b>Ready for Retest</span><span><b>Retest</b>Not Run</span></div><div class="sim-two"><div class="sim-box expected"><span>EXPECTED</span><p>로그아웃 후 세션을 해제하고 /main 직접 접근 시 /login으로 이동해야 한다.</p></div><div class="sim-box assumed"><span>SIMULATED ACTUAL</span><p>로그아웃 이후에도 /main에 접근되고 이전 사용자 아이디가 표시된다고 가정했다.</p></div></div><details class="sim-details"><summary>재현 절차와 재검증 계획 읽기 ＋</summary><div class="sim-details-body"><h4>재현 절차 (가정)</h4><ol><li>testuser01로 로그인하여 /main 이동을 확인한다.</li><li>로그아웃 버튼을 클릭한 후 /login 이동을 확인한다.</li><li>주소창에 /main 주소를 새로 입력하여 접근한다.</li><li>접근 차단 여부 및 이전 계정 정보의 표시 여부를 확인한다.</li></ol><h4>영향</h4><p>로그아웃 시 세션 무효화 실패로 공용 기기 등에서 이전 사용자 정보에 접근할 위험이 발생함.</p><h4>QA 재검증 / 회귀 계획</h4><p>로그아웃 후 /main 접근 제한·정보 미노출 확인, 정상 로그인·재로그인 관련 회귀 테스트 계획. 실제 실행은 Not Run.</p></div></details><div class="jira-evidence"><a href="defect-reports/media/qad2-detail.png" rel="noopener" target="_blank"><img alt="QAD-2 Jira 상세 내역과 기대 및 가정 결과" loading="lazy" src="defect-reports/media/qad2-detail.png"/></a><a href="defect-reports/media/qad2-history.png" rel="noopener" target="_blank"><img alt="QAD-2 Jira 가상 개발자 검토와 재검증 댓글" loading="lazy" src="defect-reports/media/qad2-history.png"/></a></div><div class="defect-actions"><a href="defect-reports/QAD-2_simulated_report.pdf" rel="noopener" target="_blank">PDF 미리보기 ↗</a><a download="" href="defect-reports/QAD-2_simulated_report.docx">Word 원본 ↓</a></div></article>
+<div class="case-callout"><strong>자료 해석</strong> · 사진은 Jira 결함 <em>관리 실습</em>의 증빙입니다. 실패 화면이나 실제 결함 재현 증거가 아닙니다. 제출한 PDF/Word는 사용자가 작성한 문서 원본이며, 일부 서식·오타는 원본 상태로 유지했습니다.</div><p class="case-docs-bundle"><a download="" href="defect-reports/Jira_defect_reports_2_cases.zip">결함 보고서 2건 ZIP 다운로드 ↓</a></p></section>
+<section class="case-section" id="automation">
+<span class="case-label">09 / AUTOMATION HANDOFF</span>
+<h2>수동 테스트에서 자동화로</h2>
+<p class="case-lead">43개 TC는 모두 수동으로 검증해 PASS로 기록했습니다. 이 중 <strong>반복 실행과 결과 판정에 적합한 34개 TC</strong>를 Python·Selenium으로 자동화했고, <strong>9개 TC는 수동 검증으로 유지</strong>했습니다. 자동화하지 않았다는 이유로 테스트 범위에서 제외한 것은 아닙니다.</p>
+<div class="case-result"><div><strong>43</strong><span>수동 실행 · PASS</span></div><div><strong>34</strong><span>자동 실행 · PASS 기록</span></div><div><strong>9</strong><span>수동으로 유지</span></div></div>
+<div class="case-cards"><article class="case-card"><span class="case-card-id">AUTOMATED / 34 TC</span><h3>입력값 검증 + 인증</h3><p>TC-001~022, TC-025~036. CSV 데이터를 불러와 화면 메시지, 요청 발생, 실패 횟수 초기화 등 조건을 확인합니다.</p></article><article class="case-card"><span class="case-card-id">MANUAL ONLY / 9 TC</span><h3>필요에 따른 선택</h3><p>TC-023~024, TC-037~043. 표시/숨기기, 잠금 시간과 상태 변화, 로그인 버튼·로그아웃 등의 동작은 현재 수동 검증을 유지했습니다.</p></article></div>
+<p class="case-small">※ 34건의 자동화 PASS는 제출한 실행 화면에 표시된 값입니다. 자동화 커버리지 34/43은 TC 개수 기준으로, 코드 커버리지와 다릅니다.</p>
+<p class="case-overview-download"><a href="../login-automation/index.html">Python + Selenium 자동화 상세 페이지 보기 →</a></p>
+</section>
+<section class="case-section" id="documents">
+<span class="case-label">10 / PROJECT DOCUMENTS</span>
+<h2>프로젝트 산출물</h2>
+<p class="case-lead">원본 문서 4종을 그대로 제공합니다. 명세서는 PDF 열람과 DOCX 다운로드를, 분석서와 테스트 케이스는 위의 웹 열람 기능과 XLSX 다운로드를 지원합니다.</p>
+<div class="case-callout"><strong>열람 안내</strong> · PDF는 새 탭에서 열립니다. XLSX 파일은 다운로드 후 Excel 또는 한셀에서 열어주세요. 문서에 나오는 계정·비밀번호는 실습용 가상 계정 정보이며 실제 계정에 사용해서는 안 됩니다.</div>
+<p class="case-docs-bundle"><a download="" href="documents/%EB%A1%9C%EA%B7%B8%EC%9D%B8_QA_%EC%82%B0%EC%B6%9C%EB%AC%BC_4%EC%A2%85.zip">↓ 산출물 4종 원본 한 번에 다운로드 (.zip)</a></p>
+<div class="case-docs">
+<div class="case-doc"><div class="case-doc-info"><strong>01 / 로그인 기능 요구사항 명세서 v1.0</strong><span>초기 요구사항 · DOCX / PDF</span></div><div class="case-doc-actions"><a href="documents/01_%EB%A1%9C%EA%B7%B8%EC%9D%B8%20%EA%B8%B0%EB%8A%A5%20%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%20%EB%AA%85%EC%84%B8%EC%84%9C_v1.0.pdf" rel="noopener" target="_blank">PDF 보기 ↗</a><a download="" href="documents/01_%EB%A1%9C%EA%B7%B8%EC%9D%B8%20%EA%B8%B0%EB%8A%A5%20%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%20%EB%AA%85%EC%84%B8%EC%84%9C_v1.0.docx">DOCX 다운로드 ↓</a></div></div>
+<div class="case-doc"><div class="case-doc-info"><strong>02 / 요구사항 분석서</strong><span>모호한 조건과 확인 결과 · XLSX</span></div><div class="case-doc-actions"><a download="" href="documents/02_%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%20%EB%B6%84%EC%84%9D%EC%84%9C_%ED%95%9C%ED%83%9C%ED%98%84.xlsx">XLSX 다운로드 ↓</a></div></div>
+<div class="case-doc"><div class="case-doc-info"><strong>03 / 로그인 기능 요구사항 명세서 v1.1</strong><span>추가 확인사항 반영본 · DOCX / PDF</span></div><div class="case-doc-actions"><a href="documents/03_%EB%A1%9C%EA%B7%B8%EC%9D%B8%20%EA%B8%B0%EB%8A%A5%20%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%20%EB%AA%85%EC%84%B8%EC%84%9C_v1.1.pdf" rel="noopener" target="_blank">PDF 보기 ↗</a><a download="" href="documents/03_%EB%A1%9C%EA%B7%B8%EC%9D%B8%20%EA%B8%B0%EB%8A%A5%20%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%20%EB%AA%85%EC%84%B8%EC%84%9C_v1.1.docx">DOCX 다운로드 ↓</a></div></div>
+<div class="case-doc"><div class="case-doc-info"><strong>04 / 로그인 기능 테스트 케이스</strong><span>TC-001~043 및 수행 결과 · XLSX</span></div><div class="case-doc-actions"><a download="" href="documents/04_%EB%A1%9C%EA%B7%B8%EC%9D%B8%20%EA%B8%B0%EB%8A%A5%20%ED%85%8C%EC%8A%A4%ED%8A%B8%20%EC%BC%80%EC%9D%B4%EC%8A%A4.xlsx">XLSX 다운로드 ↓</a></div></div>
+</div>
+<p class="case-small">※ 이 자료는 취업 포트폴리오 공개를 위한 QA 실습 기록이며, 실제 운영 서비스의 보안 정보나 업무 문서가 아닙니다. 웹 페이지의 설명은 원본 문서의 발췌 요약입니다.</p>
+</section>
+<section class="case-section" id="review">
+<span class="case-label">11 / TAKEAWAYS</span>
+<h2>이번 단계에서 정리한 점</h2>
+<p class="case-lead">요구사항 문장의 작은 차이도 테스트 기대 결과에 영향을 줄 수 있었습니다. 따라서 테스트 케이스를 작성하기 전에 입력 제한, 오류 메시지 표시 방식, 계정 잠금 시점과 같이 결과를 좌우하는 조건을 먼저 구체화하는 흐름으로 문서를 정리했습니다.</p>
+<div class="case-callout">자동화 구현 및 실행 기록은 <a href="../login-automation/index.html">별도의 자동화 상세 페이지</a>에 연결했습니다. 개인 회고는 추후 추가할 수 있습니다.</div>
+<p class="case-small">자료 기준: 로그인 기능 요구사항 명세서 v1.0/v1.1, 요구사항 분석서, 로그인 기능 테스트 케이스(총 43건). 이 페이지는 자료 기반 요약본이며 원본 전체를 대체하지 않습니다.</p>
+</section>
+</div>
+</div>
+</main>
+<script src="data.js"></script>
+<script src="explorer.js"></script>
+<footer class="case-bottom"><div class="container"><div><strong>TH / QUALITY NOTEBOOK / PROJECT 001</strong><p>테스트 과정과 근거를 기록하는 QA 포트폴리오</p></div><a href="../../index.html#projects">다른 프로젝트 보기 ↗</a></div></footer>
 </body>
 </html>

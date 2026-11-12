@@ -1,35 +1,28 @@
-# TH QA LAB — QA 포트폴리오 v4
+# TH / Quality Notebook — portfolio v6
 
-GitHub Pages 정적 웹사이트. GitHub 사용자명: `phixia0`.
+완전히 새롭게 제작한 메인 레이아웃과 새 색상 체계(웜 페이퍼 / 잉크 / 애시드 라임 / 코발트)를 사용합니다. 별도 UI 프레임워크 없이 순수 HTML, CSS, JavaScript로 작성했습니다.
 
-## 내용
-- `projects/login-qa/`: 로그인 기능 QA — 요구사항 분석 12건, 수동 TC 43건(43 PASS 기록), 원본 산출물 4종 및 웹 탐색기
-- `projects/login-automation/`: Python + Selenium — 자동화 TC 34건(Validation 25 / Authentication 9) 및 실행 스크린샷
-- `projects/login-automation/sources/`: 자동화 Python 코드 2종, CSV 2종, 묶음 ZIP
-- `projects/login-automation/media/`: 제출된 실행 과정·결과 화면 4장
+## 배포
+이 ZIP의 **내부 파일과 폴더 전체**를 `phixia0.github.io` 저장소의 루트에 업로드해 주세요. `index.html`, `styles.css`, `projects.js`, `app.js`, `projects/`를 함께 반영해야 합니다. 기존 GitHub Pages `main / (root)` 설정은 유지합니다.
 
-## 공개 주의
-- `.local_secret`, `qa_practice.db` 및 로컬 상태 파일은 포함하지 않았습니다.
-- CSV와 원본 산출물의 테스트용 ID/비밀번호는 가상 예시 데이터이며 실제 비밀번호로 사용하지 마세요.
-- 테스트 대상 Flask 앱은 로컬 전용입니다. GitHub Pages에서 실행되지 않습니다.
-- Flask 앱과 자동화 실행을 함께 재현하려면 테스트 대상의 `templates/` 등 관련 파일, Python 의존성, 서버 실행이 추가로 필요합니다. 공개된 소스 4종은 자동화 로직 열람용입니다.
-- 원본 Python 자동화는 `01_data` 폴더의 CSV를 읽습니다. 예시 프로젝트 구조:
+## 페이지
+- `/` 새 홈페이지
+- `/projects/login-qa/` 기존 요구사항 분석, 43 TC 탐색, 요구사항 추적표, PDF/원본 다운로드 유지 + 새 Jira 가상 결함 2건
+- `/projects/login-automation/` 기존 34건 자동화, 코드, 실행화면, CSV/소스 다운로드 유지 + 최신 Jira 연결
 
-```text
-login-automation-local/
-  01_data/
-    login_validation.csv
-    login_authentication.csv
-  02_scripts/
-    01_Test_login_validation.py
-    02_Test_authentication.py
-```
+## 결함 보고 기록
+- QAD-1: TC-032 / 계정 잠금 상태 인증 허용 가상 시나리오
+- QAD-2: TC-043 관련 / 로그아웃 후 페이지 접근 허용 가상 시나리오
+- 실제 수행: 수동 43 PASS, 자동화 34 PASS (제공 기록 기준)
+- 실제 발견 결함: 0 / 가상 결함: 2 / 재검증: Not Run
+- Jira 화면 스크린샷은 **Jira 사용 실습**의 증거이지 실제 결함 증빙이 아닙니다.
+- 첨부된 PDF와 DOCX는 사용자가 제공한 원본을 그대로 보존했습니다. 원본 문서의 사소한 서식 및 오탈자는 수정하지 않았습니다.
 
-## 업로드
-ZIP 압축을 해제한 **내용 전체**를 기존 GitHub 저장소 루트에 반영하세요. `index.html`과 `styles.css`, `projects.js` 등 기존 파일도 새 버전으로 교체해야 메인 페이지의 링크가 갱신됩니다. 기존 Pages 설정은 그대로 둡니다.
+## 변경 시 주의
+- `qa_practice.db`, `.local_secret` 등 로컬 상태/비밀키 파일은 포함하지 않습니다.
+- 페이지의 HTML 경로 및 `projects/login-qa/data.js`, `explorer.js`, 자동화 CSV 등은 기존 기능을 유지합니다.
+- 화면이 오래된 경우 GitHub Pages 배포 완료 후 Ctrl+Shift+R을 사용하세요.
 
-## 집계 출처
-- 수동: 제출한 TC 엑셀 결과 43 PASS (사용자의 수동 실행 진술과 일치)
-- 자동: 제공된 콘솔 캡처의 Validation 25 PASS / Authentication 9 PASS
-- 자동화하지 않은 TC: 023, 024, 037–043 (9개)
-- 자동화 코드는 제공된 파일 그대로 공개했고 변경하지 않았습니다. 일부 판정 조건 보강은 후속 개선으로 명시했습니다.
+
+## v7 업데이트
+메인 「검증의 기록」을 직사각형 프로젝트 카드 그리드 대신 번호/가이드 라인/타이포그래피 중심의 세로형 케이스 인덱스로 변경했습니다. Jira 가상 결함 관리 2건은 별도 항목으로 표시되며 클릭 시 로그인 QA 상세 페이지의 결함 실습 영역으로 이동합니다. 원본 산출물과 자동화 상세 페이지는 유지합니다.

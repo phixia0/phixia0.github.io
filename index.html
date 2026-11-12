@@ -1,60 +1,6 @@
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#101b2b" />
-  <meta name="description" content="한태현의 QA 포트폴리오 — 테스트 설계, 실행, 자동화와 학습 기록" />
-  <title>TH QA LAB — Software QA Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="projects.js"></script>
-  <script defer src="app.js"></script>
-</head>
-<body>
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="홈으로"><span class="brand-mark">TH<span class="brand-dot">.</span></span><span class="brand-caption">QA LAB / PORTFOLIO</span></a>
-    <button class="menu-toggle" aria-label="메뉴 열기" aria-expanded="false">☰</button>
-    <nav class="nav" aria-label="주 메뉴">
-      <a href="#projects">Projects</a><a href="#process">Process</a><a href="#about">About</a><a href="#contact" class="nav-contact">Contact <span>↗</span></a>
-    </nav>
-  </header>
-  <main id="top">
-    <section class="hero container" aria-labelledby="hero-title">
-      <div class="hero-topline"><span class="status-dot"></span> OPEN TO QA OPPORTUNITIES <span class="topline-right">SEOUL, KR / 2026</span></div>
-      <div class="hero-grid">
-        <div>
-          <p class="eyebrow">SOFTWARE QUALITY ASSURANCE · PORTFOLIO</p>
-          <h1 id="hero-title">작은 차이를 발견하고,<br/><em>더 나은 품질</em>을 만듭니다<span class="period">.</span></h1>
-          <p class="hero-description">요구사항을 분석하고, 테스트를 설계하고, 결과를 검증합니다.<br class="desktop-br"/> 하나의 기능을 꼼꼼히 살펴보는 것부터 QA 역량을 쌓아가고 있습니다.</p>
-          <div class="hero-actions"><a class="button primary" href="#projects">프로젝트 살펴보기 <span>↗</span></a><a class="button text" href="#about">저에 대해 더 알아보기 <span>↘</span></a></div>
-        </div>
-        <div class="hero-visual" aria-label="테스트 프로세스 시각화">
-          <div class="visual-top"><span>QUALITY / WORKFLOW</span><span>01 — 04</span></div>
-          <div class="orbit"><span class="orbit-core">QA<span>+</span></span><span class="orbit-text orbit-text-1">ANALYZE</span><span class="orbit-text orbit-text-2">DESIGN</span><span class="orbit-text orbit-text-3">VERIFY</span><span class="orbit-text orbit-text-4">IMPROVE</span></div>
-          <div class="visual-bottom"><span>THINK IN CASES.</span><span>TEST WITH PURPOSE.</span></div>
-        </div>
-      </div>
-      <div class="hero-footer"><span>SCROLL TO EXPLORE</span><span class="down-arrow">↓</span><span>01 / SELECTED WORKS</span></div>
-    </section>
-
-    <section id="projects" class="section section-light">
-      <div class="container">
-        <div class="section-kicker"><span>01 / SELECTED WORKS</span><span>PORTFOLIO</span></div>
-        <div class="section-heading"><h2>프로젝트<span class="accent">✳</span></h2><p>테스트를 어떻게 계획하고, 설계하고, 검증했는지<br/>과정과 결과를 함께 기록합니다.</p></div>
-        <div class="filters" role="group" aria-label="프로젝트 분류"><button class="filter active" data-filter="all" aria-pressed="true">전체 보기</button><button class="filter" data-filter="manual" aria-pressed="false">Manual Testing</button><button class="filter" data-filter="automation" aria-pressed="false">Automation</button><button class="filter" data-filter="learning" aria-pressed="false">Learning</button></div>
-        <div id="project-grid" class="project-grid" aria-live="polite"></div>
-        <p class="project-note">* 프로젝트의 진행 상태와 내용은 실제 작업 진척에 따라 업데이트합니다.</p>
-      </div>
-    </section>
-
-    <section id="process" class="section section-dark">
-      <div class="container"><div class="section-kicker"><span>02 / WORKING PROCESS</span><span>HOW I WORK</span></div><div class="section-heading"><h2>테스트하는 방식<span class="accent">✳</span></h2><p>단순히 오류를 찾는 데서 그치지 않고,<br/>판단한 근거와 개선 과정을 기록합니다.</p></div>
-      <div class="process-grid"><article><span class="process-number">01</span><div class="process-icon">⌁</div><h3>요구사항 분석</h3><p>모호한 조건과 누락된 예외 상황을 찾아 확인할 항목을 정리합니다.</p><span class="process-en">REQUIREMENTS</span></article><article><span class="process-number">02</span><div class="process-icon">▦</div><h3>테스트 설계</h3><p>동등 분할·경곗값 분석 등 적절한 기법을 활용해 케이스를 구성합니다.</p><span class="process-en">TEST DESIGN</span></article><article><span class="process-number">03</span><div class="process-icon">◎</div><h3>실행과 검증</h3><p>기대 결과와 실제 결과를 비교하고, 로그와 네트워크 요청을 확인합니다.</p><span class="process-en">EXECUTION</span></article><article><span class="process-number">04</span><div class="process-icon">↗</div><h3>자동화와 개선</h3><p>반복 검증을 자동화하고 발견한 문제의 원인과 개선점을 돌아봅니다.</p><span class="process-en">IMPROVEMENT</span></article></div></div>
-    </section>
-
-    <section id="about" class="section section-light about-section"><div class="container"><div class="section-kicker"><span>03 / ABOUT ME</span><span>INTRODUCTION</span></div><div class="about-grid"><div><p class="eyebrow dark-eyebrow">HELLO, I'M TAEHYUN.</p><h2>배우고, 적용하고,<br/><span class="outline-text">끝까지 확인합니다.</span></h2></div><div class="about-copy"><p>안녕하세요. 소프트웨어 QA 직무를 준비하고 있는 <strong>한태현</strong>입니다.</p><p>소프트웨어 개발과 프로젝트 협업 경험을 바탕으로, 현재는 테스트 이론을 학습하며 로그인 기능에 대해 요구사항 분석, 43개 수동 TC 실행, 34개 Selenium 자동화 실습까지 진행했습니다.</p><p>아직 배워가는 과정이지만, 결과뿐 아니라 그 과정에서 한 판단과 시행착오까지 남기며 꾸준히 성장하고자 합니다.</p><div class="skills"><span>TEST CASE DESIGN</span><span>PYTHON</span><span>SELENIUM</span><span>CHROME DEVTOOLS</span><span>CSTS STUDY</span></div></div></div></div></section>
-
-    <section id="contact" class="contact-section"><div class="container"><div class="section-kicker"><span>04 / CONTACT</span><span>LET'S CONNECT</span></div><div class="contact-grid"><h2>다음 단계도<br/>차근차근<span class="accent">.</span></h2><div><p>작은 실습부터 쌓아가는 QA 포트폴리오입니다.<br/>프로젝트와 학습 기록을 계속 업데이트하겠습니다.</p><p class="contact-hint">GitHub 주소 및 이메일은 공개 전 본인 정보로 교체해 주세요.</p><a class="contact-link" id="github-link" href="#contact" aria-disabled="true">GitHub 주소 등록 예정 ↗</a></div></div><footer><span>© <span id="year">2026</span> HAN TAEHYUN · TH QA LAB</span><a href="#top">BACK TO TOP ↑</a></footer></div></section>
-  </main>
-</body>
-</html>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f4f2e9"><meta name="description" content="QA 프로젝트의 판단과 검증 기록. 요구사항 분석, 수동 테스트, Selenium 자동화, Jira 결함 관리 실습."><title>한태현 | QA Worklog</title><link rel="stylesheet" href="styles.css"><script defer src="projects.js"></script><script defer src="app.js"></script></head>
+<body class="redesign-home"><header class="site-header"><a class="brand" href="#top" aria-label="홈"><span class="brand-mark">TH<span class="brand-dot">/</span></span><span class="brand-caption">QUALITY NOTEBOOK</span></a><button class="menu-toggle" aria-label="메뉴 열기" aria-expanded="false">☰</button><nav class="nav" aria-label="사이트 메뉴"><a href="#projects">작업 기록</a><a href="#method">접근 방식</a><a href="#about">소개</a><a href="https://github.com/phixia0" target="_blank" rel="noopener" class="nav-contact">GITHUB ↗</a></nav></header>
+<main id="top"><section class="new-hero"><div class="new-hero-inner"><div class="new-hero-top"><span class="live-indicator"><i></i> QA PORTFOLIO / 2026</span><span>TESTED · DOCUMENTED · REVISITED</span></div><div class="new-hero-body"><div class="new-hero-copy"><p class="overline">한태현 / Software Quality Assurance</p><h1>좋은 테스트는<br><span>질문에서</span><br>시작됩니다<span class="terminal-dot">_</span></h1><p class="new-hero-sub">요구사항을 읽고 의문을 남기고, 케이스를 설계하고, 결과의 근거를 확인합니다. 완벽한 결과보다 <b>설명할 수 있는 검증 과정</b>을 기록합니다.</p><div class="new-hero-buttons"><a class="glow-button" href="#projects">프로젝트 탐색 <span>↗</span></a><a class="outline-button" href="projects/login-qa/index.html#defect-simulation">Jira 결함 관리 기록 ↗</a></div></div><div class="new-hero-dashboard"><div class="dash-top"><span>TEST SESSION / LOGIN FEATURE</span><span class="dash-led">● RECORD</span></div><div class="dash-grid"><div><span>MANUAL</span><strong>43<span>/43</span></strong><small>PASS · 수동 테스트</small></div><div><span>AUTOMATED</span><strong>34<span>/34</span></strong><small>PASS · 실행 기록</small></div><div><span>DEFECT LAB</span><strong>02</strong><small>SIMULATED · Jira 실습</small></div><div><span>ACTUAL BUGS</span><strong>00</strong><small>실제 발견 결함 없음</small></div></div><div class="dash-terminal"><span class="prompt">&gt;</span> TEST REPORT <span class="ok-text">PASS</span><br><span class="prompt">&gt;</span> BUG SIMULATION <span class="warn-text">READY FOR RETEST</span><br><span class="prompt">&gt;</span> NEXT <span class="cursor">_</span></div></div></div><div class="hero-edge"><span>SCROLL FOR THE EVIDENCE</span><span>↓</span><span>01 — 03</span></div></div></section>
+<section id="projects" class="new-projects"><div class="new-container"><div class="section-overline"><span>01 / SELECTED CASES</span><span>PROJECT INDEX</span></div><div class="new-section-title"><h2>검증의 기록<span>↗</span></h2><p>수동 테스트에서 자동화, 결함 관리 실습까지.<br>각 기록을 펼치면 판단의 근거와 산출물이 이어집니다.</p></div><div class="filters" role="group" aria-label="프로젝트 분류"><button class="filter active" data-filter="all" aria-pressed="true">전체</button><button class="filter" data-filter="manual" aria-pressed="false">Manual QA</button><button class="filter" data-filter="automation" aria-pressed="false">Automation</button><button class="filter" data-filter="defect" aria-pressed="false">Defect lab</button><button class="filter" data-filter="learning" aria-pressed="false">Study</button></div><div class="record-list-intro"><span>INDEX / 001—004</span><span>RECORD TYPE</span><span>OPEN CASE ↗</span></div><div id="project-grid" class="project-grid record-list" aria-live="polite"></div><p class="project-note">수동 43 PASS · 자동화 34 PASS는 실행 기록 기준이며 가상 결함 2건은 별도 실습입니다.</p></div></section>
+<section id="method" class="new-method"><div class="new-container"><div class="section-overline"><span>02 / THINKING IN TEST CASES</span><span>MY PROCESS</span></div><div class="method-head"><h2>보이는 화면에서<br>끝내지 않습니다.</h2><p>오류 메시지 뒤의 요청과 상태를 살피고, 발견한 모호함을 테스트 가능한 조건으로 만듭니다.</p></div><div class="method-list"><article><span>01</span><h3>의문을 구조화</h3><p>초기 요구사항의 모호한 조건 12건을 질문으로 정리하고 v1.1에 반영</p><b>REQUIREMENTS ↗</b></article><article><span>02</span><h3>경계를 검증</h3><p>동등 분할, 경곗값, 인증 실패·계정 잠금 시나리오를 TC로 설계</p><b>43 TEST CASES ↗</b></article><article><span>03</span><h3>증거를 남김</h3><p>화면·Network·상태 API를 확인하고 CSV와 Selenium으로 반복 테스트</p><b>AUTOMATION ↗</b></article><article><span>04</span><h3>이슈를 추적</h3><p>실제 결과와 분리한 가상 결함 2건을 Jira에 등록하고 재검증 계획 수립</p><b>JIRA PRACTICE ↗</b></article></div></div></section>
+<section id="about" class="new-about"><div class="new-container about-layout"><div><p class="overline">03 / WHO I AM</p><h2>배우고,<br>적용하고,<br><em>다시 확인합니다.</em></h2></div><div class="about-right"><p>안녕하세요. 소프트웨어 QA 직무를 준비하는 한태현입니다.</p><p>요구사항의 의도를 이해하고, 예상과 실제를 비교해 설명할 수 있는 테스트를 지향합니다. 이 페이지는 실제로 수행한 학습과 실습의 기록입니다.</p><div class="skill-cloud"><span>TEST DESIGN</span><span>SELENIUM</span><span>PYTHON</span><span>JIRA</span><span>CHROME DEVTOOLS</span><span>CSTS STUDY</span></div><a class="about-gh" id="github-link" href="https://github.com/phixia0" target="_blank" rel="noopener">GitHub 프로필 보기 ↗</a></div></div></section></main><footer class="new-footer"><span>TH / QUALITY NOTEBOOK</span><span>© <span id="year">2026</span> HAN TAEHYUN</span><a href="#top">TOP ↑</a></footer></body></html>

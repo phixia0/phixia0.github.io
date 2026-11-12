@@ -1,6 +1,11 @@
 const grid = document.getElementById('project-grid');
 const filters = document.querySelectorAll('.filter');
-const visualClasses = { manual: '', automation: 'art-automation', learning: 'art-learning' };
+const recordLabels = {
+  manual: {label: 'MANUAL TESTING', code: '01', glyph: 'M', ornament: '43'},
+  automation: {label: 'TEST AUTOMATION', code: '02', glyph: 'A', ornament: '34'},
+  defect: {label: 'DEFECT SIMULATION', code: '03', glyph: 'D', ornament: '02'},
+  learning: {label: 'LEARNING JOURNAL', code: '04', glyph: 'S', ornament: '↗'}
+};
 
 function escapeHTML(value) {
   return String(value).replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
@@ -9,15 +14,25 @@ function escapeHTML(value) {
 function renderProjects(category = 'all') {
   const projects = window.PORTFOLIO_PROJECTS.filter(item => category === 'all' || item.category === category);
   grid.innerHTML = projects.length ? projects.map(project => {
+    const type = recordLabels[project.category] || recordLabels.learning;
     const name = escapeHTML(project.title);
     const status = escapeHTML(project.status);
-    const link = project.link ? `<a class="card-link" href="${escapeHTML(project.link)}" target="_blank" rel="noopener noreferrer">자세히 보기 ↗</a>` : '<span class="card-link" style="color:#929a9e;border-color:#ccd0d1">기록 준비 중 ↗</span>';
-    return `<article class="project-card">
-      <div class="project-art ${visualClasses[project.category] || ''}"><span class="art-code">TH QA LAB / ${escapeHTML(project.english)}</span><div class="art-label">${project.artwork}</div><span class="art-index">${escapeHTML(project.number)} / 03</span></div>
-      <div class="card-body"><div class="card-meta"><span>${escapeHTML(project.english)}</span><span class="badge ${project.status === '예정' ? 'planned' : ''}">${status}</span></div>
-      <h3>${name}</h3><p>${escapeHTML(project.description)}</p><div class="card-bottom"><div class="tags">${project.tags.map(tag => `<span>${escapeHTML(tag)}</span>`).join('')}</div>${link}</div></div>
+    const link = project.link ? escapeHTML(project.link) : '';
+    const isReady = Boolean(link);
+    const title = isReady ? `<a class="record-title-link" href="${link}">${name}<span aria-hidden="true">↗</span></a>` : name;
+    const action = isReady ? `<a class="record-open" href="${link}" aria-label="${name} 상세 기록 보기">기록 열람 <span aria-hidden="true">↗</span></a>` : '<span class="record-open record-open-disabled">기록 준비 중 <span aria-hidden="true">·</span></span>';
+    return `<article class="record-row record-${escapeHTML(project.category)}">
+      <div class="record-index"><span class="record-sequence">${escapeHTML(project.number)}<small> / 04</small></span><span class="record-rail" aria-hidden="true"></span></div>
+      <div class="record-main">
+        <div class="record-type"><span class="record-type-dot"></span>${escapeHTML(type.label)}<span class="record-status">${status}</span></div>
+        <h3>${title}</h3>
+        <p class="record-desc">${escapeHTML(project.description)}</p>
+        <div class="record-tags">${project.tags.map(tag => `<span>${escapeHTML(tag)}</span>`).join('')}</div>
+      </div>
+      <div class="record-aside" aria-hidden="true"><div class="record-symbol"><span>${escapeHTML(type.ornament)}</span><i>${escapeHTML(type.glyph)}</i></div></div>
+      <div class="record-tail">${action}</div>
     </article>`;
-  }).join('') : '<p class="empty">이 분류의 프로젝트는 아직 없습니다.</p>';
+  }).join('') : '<p class="empty">이 분류의 기록은 아직 없습니다.</p>';
 }
 
 filters.forEach(button => button.addEventListener('click', () => {
