@@ -1,0 +1,10 @@
+TC_ID,username,password,attempt_count,expected_result,expected_message,expected_other_message,updated_username,updated_password
+TC-028,testuser01,Test1234!,1,LOGIN_SUCCESS,,,,
+TC-029,testuser01,Test1234!,1,RESET_FAILURE_COUNT,,,,
+TC-030,unknownuser,Test1234!,1,LOGIN_FAILURE,아이디 또는 비밀번호가 올바르지 않습니다.,,,
+TC-031,testuser01,Wrong1234!,1,LOGIN_FAILURE,아이디 또는 비밀번호가 올바르지 않습니다.,,,
+TC-032,testuser01,Test1234!,1,ACCOUNT_LOCKED,계정이 잠겼습니다. 잠시 후 다시 시도해주세요.,,,
+TC-033,testuser01,Wrong1234!,5,ACCOUNT_LOCKED,계정이 잠겼습니다. 잠시 후 다시 시도해주세요.,,,
+TC-034,A1,Test1234!,1,ID_ERROR_PRIORITY,아이디는 5~15자로 입력해주세요.,,,
+TC-035,testuser01,A1?,1,PW_ERROR_PRIORITY,비밀번호는 8~20자로 입력해주세요.,,,
+TC-036,A1234,Test1234?,1,INDEPENDENT_ERROR_CLEAR,아이디는 영문 소문자와 숫자만 사용할 수 있습니다.,비밀번호에 허용되지 않는 문자가 포함되어 있습니다.,A12345,Test12345?

@@ -9,8 +9,8 @@ window.PORTFOLIO_PROJECTS = [
     title: '로그인 기능 QA',
     english: 'LOGIN FEATURE TESTING',
     artwork: 'LOGIN<br>QA TEST',
-    description: '10개 요구사항을 분석하고 12개 추가 확인사항을 정리했습니다. 43개 테스트 케이스 설계와 실행 기록을 상세 페이지에서 확인할 수 있습니다.',
-    tags: ['REQ 10개', '확인사항 12건', 'TC 43개'],
+    description: '10개 요구사항을 분석하고 12개 추가 확인사항을 정리했습니다. 43개 테스트 케이스를 수동 실행해 모두 PASS로 기록했습니다. 자동화한 34건과 수동 유지 9건의 구분 및 전체 산출물을 확인할 수 있습니다.',
+    tags: ['REQ 10개', '수동 43 PASS', '산출물 공개'],
     status: '기록 공개',
     link: 'projects/login-qa/index.html'
   },
@@ -20,10 +20,10 @@ window.PORTFOLIO_PROJECTS = [
     title: '로그인 테스트 자동화',
     english: 'SELENIUM AUTOMATION',
     artwork: 'PYTHON<br>+ SELENIUM',
-    description: 'Python과 Selenium을 활용해 로그인 검증을 자동화하고, 테스트 데이터와 실행 결과를 체계적으로 관리하는 연습을 진행하고 있습니다.',
-    tags: ['Python', 'Selenium', 'CSV'],
-    status: '진행 중',
-    link: ''
+    description: 'CSV 기반 검증 25건과 로그인 인증 9건을 자동화했습니다. 실제 실행 기록, 주요 코드, CSV 데이터와 9건의 수동 유지 근거를 확인할 수 있습니다.',
+    tags: ['34 PASS 기록', 'Selenium', 'CSV'],
+    status: '기록 공개',
+    link: 'projects/login-automation/index.html'
   },
   {
     number: '03',

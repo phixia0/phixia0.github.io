@@ -20,6 +20,7 @@
         <h1>로그인 기능<br>QA 프로젝트<span class="accent">.</span></h1>
         <p>가상 웹 서비스의 로그인 기능을 대상으로, 최초 요구사항의 모호함을 찾아 구체화하고 테스트 케이스를 설계·실행한 개인 실습 프로젝트입니다. 결과뿐 아니라 판단의 근거와 요구사항 변경 과정을 기록했습니다.</p>
         <div class="case-chips"><span>REQUIREMENTS ANALYSIS</span><span>TEST CASE DESIGN</span><span>TEST EXECUTION</span><span>CHROME DEVTOOLS</span></div>
+        <div class="case-hero-actions"><a class="case-download-primary" href="#documents">↓ QA 산출물 4종 다운로드</a><a class="case-download-secondary" href="documents/%EB%A1%9C%EA%B7%B8%EC%9D%B8_QA_%EC%82%B0%EC%B6%9C%EB%AC%BC_4%EC%A2%85.zip" download>전체 문서 ZIP 받기 ↗</a></div>
       </div>
     </section>
     <div class="case-metrics" aria-label="프로젝트 요약 수치">
@@ -56,6 +57,7 @@
             <tr><th scope="row">테스트 제외</th><td>회원가입, 비밀번호 찾기, 소셜 로그인, 서버 부하 및 네트워크 장애 테스트 등</td></tr>
             <tr><th scope="row">산출물</th><td>요구사항 명세서 v1.0 / 분석서 / 명세서 v1.1 / 테스트 케이스</td></tr>
           </tbody></table></div>
+          <p class="case-overview-download"><a href="#documents">📂 요구사항 명세서·분석서·테스트 케이스 다운로드 바로가기 →</a></p>
           <div class="case-callout"><strong>프로젝트 성격</strong> · 실제 기업 서비스의 검증 경험이 아닌, 학습용으로 정의한 가상의 요구사항과 테스트 환경을 이용한 개인 실습입니다.</div>
         </section>
 
@@ -137,10 +139,13 @@
         </section>
 
         <section class="case-section" id="automation">
-          <span class="case-label">05 / TEST AUTOMATION</span>
-          <h2>자동화로 확장하는 중</h2>
-          <p class="case-lead">본 페이지는 요구사항 분석과 수동 테스트 기록을 중심으로 구성했습니다. Python·Selenium 기반 로그인 테스트 자동화는 별도 작업으로 이어가고 있으며, 구현 내용과 실행 결과가 정리되는 대로 연결할 예정입니다.</p>
-          <div class="case-panel"><div class="panel-label">NEXT ITERATION</div><h3>Python + Selenium</h3><p>테스트 데이터 준비 → 브라우저 조작 → 결과 검증 → 실행 결과 기록 과정을 자동화 포트폴리오에 단계별로 정리할 계획입니다. 아직 공개하지 않은 자동화 결과를 완료한 성과로 표시하지 않습니다.</p></div>
+          <span class="case-label">08 / AUTOMATION HANDOFF</span>
+          <h2>수동 테스트에서 자동화로</h2>
+          <p class="case-lead">43개 TC는 모두 수동으로 검증했습니다. 이 중 <strong>반복 실행과 결과 판정에 적합한 34개 TC</strong>를 Python·Selenium으로 자동화했고, <strong>9개 TC는 수동 검증으로 유지</strong>했습니다. 자동화하지 않았다는 이유로 테스트 범위에서 제외한 것은 아닙니다.</p>
+          <div class="case-result"><div><strong>43</strong><span>수동 실행 · PASS</span></div><div><strong>34</strong><span>자동 실행 · PASS 기록</span></div><div><strong>9</strong><span>수동으로 유지</span></div></div>
+          <div class="case-cards"><article class="case-card"><span class="case-card-id">AUTOMATED / 34 TC</span><h3>입력값 검증 + 인증</h3><p>TC-001~022, TC-025~036. CSV 데이터를 불러와 화면 메시지, 요청 발생, 실패 횟수 초기화 등 조건을 확인합니다.</p></article><article class="case-card"><span class="case-card-id">MANUAL ONLY / 9 TC</span><h3>필요에 따른 선택</h3><p>TC-023~024, TC-037~043. 표시/숨기기, 잠금 시간과 상태 변화, 로그인 버튼·로그아웃 등의 동작은 현재 수동 검증을 유지했습니다.</p></article></div>
+          <p class="case-small">※ 34건의 자동화 PASS는 제출한 실행 화면에 표시된 값입니다. 자동화 커버리지 34/43은 TC 개수 기준으로, 코드 커버리지와 다릅니다.</p>
+          <p class="case-overview-download"><a href="../login-automation/index.html">Python + Selenium 자동화 상세 페이지 보기 →</a></p>
         </section>
 
         <section class="case-section" id="documents">
@@ -148,11 +153,12 @@
           <h2>프로젝트 산출물</h2>
           <p class="case-lead">원본 문서 4종을 그대로 제공합니다. 명세서는 PDF 열람과 DOCX 다운로드를, 분석서와 테스트 케이스는 위의 웹 열람 기능과 XLSX 다운로드를 지원합니다.</p>
           <div class="case-callout"><strong>열람 안내</strong> · PDF는 새 탭에서 열립니다. XLSX 파일은 다운로드 후 Excel 또는 한셀에서 열어주세요. 문서에 나오는 계정·비밀번호는 실습용 가상 계정 정보이며 실제 계정에 사용해서는 안 됩니다.</div>
+          <p class="case-docs-bundle"><a href="documents/%EB%A1%9C%EA%B7%B8%EC%9D%B8_QA_%EC%82%B0%EC%B6%9C%EB%AC%BC_4%EC%A2%85.zip" download>↓ 산출물 4종 원본 한 번에 다운로드 (.zip)</a></p>
           <div class="case-docs">
-            <div class="case-doc"><div class="case-doc-info"><strong>01 / 로그인 기능 요구사항 명세서 v1.0</strong><span>초기 요구사항 · DOCX / PDF</span></div><div class="case-doc-actions"><a href="documents/01_로그인 기능 요구사항 명세서_v1.0.pdf" target="_blank" rel="noopener">PDF 보기 ↗</a><a href="documents/01_로그인 기능 요구사항 명세서_v1.0.docx" download>원본 다운로드 ↓</a></div></div>
-            <div class="case-doc"><div class="case-doc-info"><strong>02 / 요구사항 분석서</strong><span>모호한 조건과 확인 결과 · XLSX</span></div><div class="case-doc-actions"><a href="documents/02_요구사항 분석서_한태현.xlsx" download>원본 다운로드 ↓</a></div></div>
-            <div class="case-doc"><div class="case-doc-info"><strong>03 / 로그인 기능 요구사항 명세서 v1.1</strong><span>추가 확인사항 반영본 · DOCX / PDF</span></div><div class="case-doc-actions"><a href="documents/03_로그인 기능 요구사항 명세서_v1.1.pdf" target="_blank" rel="noopener">PDF 보기 ↗</a><a href="documents/03_로그인 기능 요구사항 명세서_v1.1.docx" download>원본 다운로드 ↓</a></div></div>
-            <div class="case-doc"><div class="case-doc-info"><strong>04 / 로그인 기능 테스트 케이스</strong><span>TC-001~043 및 수행 결과 · XLSX</span></div><div class="case-doc-actions"><a href="documents/04_로그인 기능 테스트 케이스.xlsx" download>원본 다운로드 ↓</a></div></div>
+            <div class="case-doc"><div class="case-doc-info"><strong>01 / 로그인 기능 요구사항 명세서 v1.0</strong><span>초기 요구사항 · DOCX / PDF</span></div><div class="case-doc-actions"><a href="documents/01_%EB%A1%9C%EA%B7%B8%EC%9D%B8%20%EA%B8%B0%EB%8A%A5%20%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%20%EB%AA%85%EC%84%B8%EC%84%9C_v1.0.pdf" target="_blank" rel="noopener">PDF 보기 ↗</a><a href="documents/01_%EB%A1%9C%EA%B7%B8%EC%9D%B8%20%EA%B8%B0%EB%8A%A5%20%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%20%EB%AA%85%EC%84%B8%EC%84%9C_v1.0.docx" download>DOCX 다운로드 ↓</a></div></div>
+            <div class="case-doc"><div class="case-doc-info"><strong>02 / 요구사항 분석서</strong><span>모호한 조건과 확인 결과 · XLSX</span></div><div class="case-doc-actions"><a href="documents/02_%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%20%EB%B6%84%EC%84%9D%EC%84%9C_%ED%95%9C%ED%83%9C%ED%98%84.xlsx" download>XLSX 다운로드 ↓</a></div></div>
+            <div class="case-doc"><div class="case-doc-info"><strong>03 / 로그인 기능 요구사항 명세서 v1.1</strong><span>추가 확인사항 반영본 · DOCX / PDF</span></div><div class="case-doc-actions"><a href="documents/03_%EB%A1%9C%EA%B7%B8%EC%9D%B8%20%EA%B8%B0%EB%8A%A5%20%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%20%EB%AA%85%EC%84%B8%EC%84%9C_v1.1.pdf" target="_blank" rel="noopener">PDF 보기 ↗</a><a href="documents/03_%EB%A1%9C%EA%B7%B8%EC%9D%B8%20%EA%B8%B0%EB%8A%A5%20%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%20%EB%AA%85%EC%84%B8%EC%84%9C_v1.1.docx" download>DOCX 다운로드 ↓</a></div></div>
+            <div class="case-doc"><div class="case-doc-info"><strong>04 / 로그인 기능 테스트 케이스</strong><span>TC-001~043 및 수행 결과 · XLSX</span></div><div class="case-doc-actions"><a href="documents/04_%EB%A1%9C%EA%B7%B8%EC%9D%B8%20%EA%B8%B0%EB%8A%A5%20%ED%85%8C%EC%8A%A4%ED%8A%B8%20%EC%BC%80%EC%9D%B4%EC%8A%A4.xlsx" download>XLSX 다운로드 ↓</a></div></div>
           </div>
           <p class="case-small">※ 이 자료는 취업 포트폴리오 공개를 위한 QA 실습 기록이며, 실제 운영 서비스의 보안 정보나 업무 문서가 아닙니다. 웹 페이지의 설명은 원본 문서의 발췌 요약입니다.</p>
         </section>
@@ -161,7 +167,7 @@
           <span class="case-label">07 / TAKEAWAYS</span>
           <h2>이번 단계에서 정리한 점</h2>
           <p class="case-lead">요구사항 문장의 작은 차이도 테스트 기대 결과에 영향을 줄 수 있었습니다. 따라서 테스트 케이스를 작성하기 전에 입력 제한, 오류 메시지 표시 방식, 계정 잠금 시점과 같이 결과를 좌우하는 조건을 먼저 구체화하는 흐름으로 문서를 정리했습니다.</p>
-          <div class="case-callout">추후 업데이트: 대표 테스트 증빙 화면, 자동화 구현 결과, 직접 작성한 프로젝트 회고.</div>
+          <div class="case-callout">자동화 구현 및 실행 기록은 <a href="../login-automation/index.html">별도의 자동화 상세 페이지</a>에 연결했습니다. 개인 회고는 추후 추가할 수 있습니다.</div>
           <p class="case-small">자료 기준: 로그인 기능 요구사항 명세서 v1.0/v1.1, 요구사항 분석서, 로그인 기능 테스트 케이스(총 43건). 이 페이지는 자료 기반 요약본이며 원본 전체를 대체하지 않습니다.</p>
         </section>
       </div>

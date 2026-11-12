@@ -1,0 +1,26 @@
+TC_ID,username,password,expected_result,expected_message
+TC-001,test,Test1234!,FORMAT_ERROR,아이디는 5~15자로 입력해주세요.
+TC-002,test1,Test1234!,AUTH_REQUEST,
+TC-003,idtest123456789,Test1234!,AUTH_REQUEST,
+TC-004,idtest1234567899,,INPUT_LIMIT,
+TC-005,testuser01,Test123,FORMAT_ERROR,비밀번호는 8~20자로 입력해주세요.
+TC-006,testuser01,Test123!,AUTH_REQUEST,
+TC-007,testuser01,Test1234!Test1234!AB,AUTH_REQUEST,
+TC-008,,Test1234!Test1234!ABC,INPUT_LIMIT,
+TC-009,Testuser01,Test1234!,FORMAT_ERROR,아이디는 영문 소문자와 숫자만 사용할 수 있습니다.
+TC-010,abcdef,Test1234!,AUTH_REQUEST,
+TC-011,123456,Test1234!,AUTH_REQUEST,
+TC-012,test가123,Test1234!,FORMAT_ERROR,아이디는 영문 소문자와 숫자만 사용할 수 있습니다.
+TC-013,test 123,Test1234!,FORMAT_ERROR,아이디는 영문 소문자와 숫자만 사용할 수 있습니다.
+TC-014,test@123,Test1234!,FORMAT_ERROR,아이디는 영문 소문자와 숫자만 사용할 수 있습니다.
+TC-015,testuser01,Test1234!,AUTH_REQUEST,
+TC-016,testuser01,test1234!,FORMAT_ERROR,"비밀번호는 영문 대소문자, 숫자, 특수문자를 각각 1개 이상 포함해야 합니다."
+TC-017,testuser01,TEST1234!,FORMAT_ERROR,"비밀번호는 영문 대소문자, 숫자, 특수문자를 각각 1개 이상 포함해야 합니다."
+TC-018,testuser01,TestTest!,FORMAT_ERROR,"비밀번호는 영문 대소문자, 숫자, 특수문자를 각각 1개 이상 포함해야 합니다."
+TC-019,testuser01,Test1234,FORMAT_ERROR,"비밀번호는 영문 대소문자, 숫자, 특수문자를 각각 1개 이상 포함해야 합니다."
+TC-020,testuser01,Test가1234!,FORMAT_ERROR,비밀번호에 허용되지 않는 문자가 포함되어 있습니다.
+TC-021,testuser01,Test 1234!,FORMAT_ERROR,비밀번호에 허용되지 않는 문자가 포함되어 있습니다.
+TC-022,testuser01,Test1234?,FORMAT_ERROR,비밀번호에 허용되지 않는 문자가 포함되어 있습니다.
+TC-025,,Test1234!,REQUIRED_ERROR,아이디를 입력해주세요.
+TC-026,testuser01,,REQUIRED_ERROR,비밀번호를 입력해주세요.
+TC-027,,,REQUIRED_ERROR,아이디를 입력해주세요. / 비밀번호를 입력해주세요.
